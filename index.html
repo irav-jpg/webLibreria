@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boak - Librería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .navbar-custom {
+            background-color: #e0007f; /* Color magenta */
+            padding: 0.5rem 0;
+        }
+
+        /* Logo BOAK */
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: white !important;
+            margin: 0;
+        }
+
+        /* Botón Categorías */
+        .btn-categories {
+            color: white;
+            border: none;
+            background: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Buscador Estilo Liverpool */
+        .search-group {
+            background-color: white;
+            border-radius: 50px; /* Forma de cápsula */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 2px 15px;
+        }
+
+        .search-group input {
+            border: none;
+            box-shadow: none !important;
+            padding: 8px 10px;
+        }
+
+        .search-group i {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Iconos derecha */
+        .nav-link-custom {
+            color: white !important;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-link-custom i {
+            font-size: 1.5rem;
+        }
+
+        /* Badge del carrito */
+        .cart-badge {
+            font-size: 0.65rem;
+            padding: 0.35em 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-custom shadow-sm">
+    <div class="container-fluid px-lg-5"> <div class="row w-100 align-items-center g-0">
+            
+            <div class="col-auto d-flex align-items-center">
+                <a class="navbar-brand me-4" href="#">BOAK-MEMBRILLO</a>
+                <button class="btn-categories d-none d-lg-flex" type="button">
+                    <i class="bi bi-list fs-3"></i>
+                    Categorías
+                </button>
+            </div>
+
+            <div class="col px-md-4">
+                <div class="search-group">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                </div>
+            </div>
+
+            <div class="col-auto d-flex align-items-center gap-4">
+                <a href="#" class="nav-link-custom d-none d-sm-flex">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Iniciar sesión</span>
+                </a>
+                
+                <a href="#" class="nav-link-custom position-relative">
+                    <i class="bi bi-bag"></i>
+                    <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark cart-badge">
+                        0
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
