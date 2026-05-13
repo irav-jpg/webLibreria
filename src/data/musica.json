@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "titulo": "After Hours",
+    "artista": "The Weeknd",
+    "costo": 520,
+    "imagen": "../img/afterhours.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "1989",
+    "artista": "Taylor Swift",
+    "costo": 580,
+    "imagen": "../img/1989.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "AM",
+    "artista": "Arctic Monkeys",
+    "costo": 490,
+    "imagen": "../img/am.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Un Verano Sin Ti",
+    "artista": "Bad Bunny",
+    "costo": 610,
+    "imagen": "../img/verano.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "25",
+    "artista": "Adele",
+    "costo": 450,
+    "imagen": "../img/adele25.jpg"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "titulo": "El resplandor",
+    "autor": "Stephen King",
+    "puntuacion": 5,
+    "costo": 450,
+    "descripcion": "Un clásico del terror psicológico.",
+    "imagen": "../img/resplandor.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Rayuela",
+    "autor": "Julio Cortázar",
+    "puntuacion": 4,
+    "costo": 380,
+    "descripcion": "Una novela experimental.",
+    "imagen": "../img/rayuela.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "puntuacion": 5,
+    "costo": 420,
+    "descripcion": "Una distopía política.",
+    "imagen": "../img/1984.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Drácula",
+    "autor": "Bram Stoker",
+    "puntuacion": 5,
+    "costo": 390,
+    "descripcion": "El clásico vampírico.",
+    "imagen": "../img/dracula.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "puntuacion": 4,
+    "costo": 410,
+    "descripcion": "Sociedad donde los libros están prohibidos.",
+    "imagen": "../img/fahrenheit.jpg"
+  }
+]

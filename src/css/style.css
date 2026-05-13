@@ -1,0 +1,273 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+  --color-primario: #d37eb2;
+  --color-acento: #a45a8d;
+  --color-fondo: #f3efe9;
+  --color-texto: #3d3d3d;
+
+  --sombra-navbar: 0 4px 12px rgba(0,0,0,0.10);
+  --sombra-card: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-fondo);
+
+  color: var(--color-texto);
+
+  font-family: 'Segoe UI', sans-serif;
+
+  overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+  background-color: var(--color-primario);
+
+  box-shadow: var(--sombra-navbar);
+}
+
+.navbar-brand {
+
+  color: white !important;
+
+  font-size: 1.6rem;
+
+  font-weight: bold;
+}
+
+.btn-search {
+
+  background-color: white;
+
+  border: none;
+
+  color: var(--color-primario);
+
+  border-radius: 0 20px 20px 0;
+
+  padding: 0 20px;
+}
+
+.form-control {
+
+  border-radius: 20px 0 0 20px;
+}
+
+.icon-size {
+
+  font-size: 1.3rem;
+}
+
+/* =========================================
+   TITULOS
+========================================= */
+
+section h2 {
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: var(--color-acento);
+
+  border-left: 6px solid var(--color-acento);
+
+  padding-left: 15px;
+
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   NETFLIX SLIDER
+========================================= */
+
+.netflix-wrapper {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.netflix-container {
+
+  overflow: hidden;
+
+  width: 100%;
+}
+
+.netflix-track {
+
+  display: flex;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.netflix-card {
+
+  min-width: 33.333%;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.card {
+
+  width: 100%;
+
+  border: none !important;
+
+  border-radius: 20px !important;
+
+  box-shadow: var(--sombra-card);
+
+  min-height: 420px;
+
+  background-color: white;
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+
+  transform: translateY(-10px);
+}
+
+.card img {
+
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+.card-title {
+
+  color: var(--color-primario);
+
+  font-weight: 700;
+
+  margin-top: 10px;
+}
+
+.card-precio {
+
+  color: #b14d1b;
+
+  font-size: 1.2rem;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   BOTONES SLIDER
+========================================= */
+
+.btn-slider {
+
+  position: absolute;
+
+  z-index: 10;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: var(--color-primario);
+
+  color: white;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.btn-slider:hover {
+
+  background-color: var(--color-acento);
+}
+
+.prev {
+
+  left: -25px;
+}
+
+.next {
+
+  right: -25px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .netflix-card {
+
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .netflix-card {
+
+    min-width: 100%;
+  }
+
+  section h2 {
+
+    font-size: 1.5rem;
+  }
+
+  .btn-slider {
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 1rem;
+  }
+
+  .prev {
+
+    left: -10px;
+  }
+
+  .next {
+
+    right: -10px;
+  }
+}
