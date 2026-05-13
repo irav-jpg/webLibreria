@@ -1,47 +1,83 @@
 [
   {
     "id": 1,
-    "titulo": "El resplandor",
-    "autor": "Stephen King",
-    "puntuacion": 5,
-    "costo": 450,
-    "descripcion": "Un clásico del terror psicológico.",
-    "imagen": "../img/resplandor.jpg"
+    "titulo": "Harry Potter y la Piedra Filosofal",
+    "autor": "J.K. Rowling",
+    "anio": 1997,
+    "precio": 399.00,
+    "descripcion": "Un niño descubre que es mago y asiste a una escuela de magia.",
+    "imagen": "../img/pottah.jpg"
   },
   {
     "id": 2,
-    "titulo": "Rayuela",
-    "autor": "Julio Cortázar",
-    "puntuacion": 4,
-    "costo": 380,
-    "descripcion": "Una novela experimental.",
-    "imagen": "../img/rayuela.jpg"
+    "titulo": "Romeo y Julieta",
+    "autor": "William Shakespeare",
+    "anio": 1597,
+    "precio": 150.00,
+    "imagen": "../img/romeo.jpg"
   },
   {
     "id": 3,
-    "titulo": "1984",
-    "autor": "George Orwell",
-    "puntuacion": 5,
-    "costo": 420,
-    "descripcion": "Una distopía política.",
-    "imagen": "../img/1984.jpg"
+    "titulo": "Alicia en el País de las Maravillas",
+    "autor": "Lewis Carroll",
+    "anio": 1865,
+    "precio": 180.00,
+    "imagen": "../img/alicia.jpg"
   },
   {
     "id": 4,
-    "titulo": "Drácula",
-    "autor": "Bram Stoker",
-    "puntuacion": 5,
-    "costo": 390,
-    "descripcion": "El clásico vampírico.",
-    "imagen": "../img/dracula.jpg"
+    "titulo": "El Instituto",
+    "autor": "Stephen King",
+    "anio": 2019,
+    "precio": 450.00,
+    "imagen": "../img/instituto.jpg"
   },
   {
     "id": 5,
-    "titulo": "Fahrenheit 451",
-    "autor": "Ray Bradbury",
-    "puntuacion": 4,
-    "costo": 410,
-    "descripcion": "Sociedad donde los libros están prohibidos.",
-    "imagen": "../img/fahrenheit.jpg"
+    "titulo": "El Padrino",
+    "autor": "Mario Puzo",
+    "anio": 1969,
+    "precio": 320.00,
+    "imagen": "../img/padrino.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "La Naranja Mecánica",
+    "autor": "Anthony Burgess",
+    "anio": 1962,
+    "precio": 280.00,
+    "imagen": "../img/naranja.jpg"
+  },
+  {
+    "id": 7,
+    "titulo": "La Sombra del Viento",
+    "autor": "Carlos Ruiz Zafón",
+    "anio": 2001,
+    "precio": 380.00,
+    "imagen": "../img/viento.jpg"
+  },
+  {
+    "id": 8,
+    "titulo": "Bajo la Misma Estrella",
+    "autor": "John Green",
+    "anio": 2012,
+    "precio": 250.00,
+    "imagen": "../img/strella.jpg"
+  },
+  {
+    "id": 9,
+    "titulo": "El Hobbit",
+    "autor": "J.R.R. Tolkien",
+    "anio": 1937,
+    "precio": 350.00,
+    "imagen": "../img/hobbit.jpg"
+  },
+  {
+    "id": 10,
+    "titulo": "El Castillo Ambulante",
+    "autor": "Diana Wynne Jones",
+    "anio": 1986,
+    "precio": 290.00,
+    "imagen": "../img/castillo.jpg"
   }
 ]

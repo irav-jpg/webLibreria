@@ -1,273 +1,174 @@
-/* =========================================
-   VARIABLES
-========================================= */
-
-:root {
-
-  --color-primario: #d37eb2;
-  --color-acento: #a45a8d;
-  --color-fondo: #f3efe9;
-  --color-texto: #3d3d3d;
-
-  --sombra-navbar: 0 4px 12px rgba(0,0,0,0.10);
-  --sombra-card: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* =========================================
-   BODY
-========================================= */
-
+/* --- Estilos base para el cuerpo (opcional) --- */
 body {
-
-  margin: 0;
-  padding: 0;
-
-  background-color: var(--color-fondo);
-
-  color: var(--color-texto);
-
-  font-family: 'Segoe UI', sans-serif;
-
-  overflow-x: hidden;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
 }
 
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar {
-
-  background-color: var(--color-primario);
-
-  box-shadow: var(--sombra-navbar);
+/* --- Personalización de la barra lateral de la página --- */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+    background: #e0007f;
+    border-radius: 10px;
 }
 
-.navbar-brand {
+/* Navbar personalizado */
+.navbar-custom {
+            background-color: #e0007f; /* Color magenta */
+            padding: 0.5rem 0;
+        }
 
-  color: white !important;
+        /* Logo BOAK */
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: white !important;
+            margin: 0;
+        }
 
-  font-size: 1.6rem;
+        /* Botón Categorías */
+        .btn-categories {
+            color: white;
+            border: none;
+            background: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-  font-weight: bold;
+        /* Buscador Estilo Liverpool */
+        .search-group {
+            background-color: white;
+            border-radius: 50px; /* Forma de cápsula */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 2px 15px;
+        }
+
+        .search-group input {
+            border: none;
+            box-shadow: none !important;
+            padding: 8px 10px;
+        }
+
+        .search-group i {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Iconos derecha */
+        .nav-link-custom {
+            color: white !important;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-link-custom i {
+            font-size: 1.5rem;
+        }
+
+        /* Badge del carrito */
+        .cart-badge {
+            font-size: 0.65rem;
+            padding: 0.35em 0.5em;
+        }
+
+/* --- CARRUSELES HORIZONTALES --- */
+.carousel-netflix {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 5px;
+    scroll-behavior: smooth;
+    /* Ocultar barras de desplazamiento */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
-.btn-search {
-
-  background-color: white;
-
-  border: none;
-
-  color: var(--color-primario);
-
-  border-radius: 0 20px 20px 0;
-
-  padding: 0 20px;
+.carousel-netflix::-webkit-scrollbar {
+    display: none;
 }
 
-.form-control {
-
-  border-radius: 20px 0 0 20px;
+/* --- TARJETAS DE PRODUCTO (CARDS) --- */
+.card-item {
+    cursor: pointer;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
+    max-width: 200px;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necesario para la extensión de descripción */
 }
 
-.icon-size {
-
-  font-size: 1.3rem;
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
 }
 
-/* =========================================
-   TITULOS
-========================================= */
-
-section h2 {
-
-  font-size: 2rem;
-
-  font-weight: 700;
-
-  color: var(--color-acento);
-
-  border-left: 6px solid var(--color-acento);
-
-  padding-left: 15px;
-
-  margin-bottom: 30px;
+/* --- CONTENEDOR DE IMAGEN Y DESCRIPCIÓN EXTENDIDA --- */
+.card-media {
+    position: relative;
+    overflow: hidden;
 }
 
-/* =========================================
-   NETFLIX SLIDER
-========================================= */
-
-.netflix-wrapper {
-
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-
-  width: 100%;
+.card-item img {
+    width: 100%;
+    aspect-ratio: 1/1; 
+    object-fit: cover;
+    display: block;
+    background-color: #f0f0f0;
 }
 
-.netflix-container {
-
-  overflow: hidden;
-
-  width: 100%;
+/* Esta es la "extensión" que muestra solo la descripción */
+.card-description-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(224, 0, 127, 0.9); /* Magenta Boak */
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
-.netflix-track {
-
-  display: flex;
-
-  transition: transform 0.5s ease-in-out;
+/* Mostrar la extensión al pasar el cursor */
+.card-item:hover .card-description-overlay {
+    opacity: 1;
 }
 
-.netflix-card {
-
-  min-width: 33.333%;
-
-  padding: 10px;
-
-  box-sizing: border-box;
+/* --- INFORMACIÓN DE LA TARJETA (Texto inferior) --- */
+.card-info {
+    padding: 10px;
+    text-align: center;
 }
 
-/* =========================================
-   TARJETAS
-========================================= */
-
-.card {
-
-  width: 100%;
-
-  border: none !important;
-
-  border-radius: 20px !important;
-
-  box-shadow: var(--sombra-card);
-
-  min-height: 420px;
-
-  background-color: white;
-
-  transition: transform 0.3s ease;
+.card-info h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card:hover {
-
-  transform: translateY(-10px);
-}
-
-.card img {
-
-  width: 100%;
-
-  height: 250px;
-
-  object-fit: cover;
-
-  border-radius: 15px;
-}
-
-.card-title {
-
-  color: var(--color-primario);
-
-  font-weight: 700;
-
-  margin-top: 10px;
-}
-
-.card-precio {
-
-  color: #b14d1b;
-
-  font-size: 1.2rem;
-
-  font-weight: 600;
-}
-
-/* =========================================
-   BOTONES SLIDER
-========================================= */
-
-.btn-slider {
-
-  position: absolute;
-
-  z-index: 10;
-
-  width: 50px;
-  height: 50px;
-
-  border: none;
-
-  border-radius: 50%;
-
-  background-color: var(--color-primario);
-
-  color: white;
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
-
-  transition: background-color 0.3s ease;
-}
-
-.btn-slider:hover {
-
-  background-color: var(--color-acento);
-}
-
-.prev {
-
-  left: -25px;
-}
-
-.next {
-
-  right: -25px;
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 992px) {
-
-  .netflix-card {
-
-    min-width: 50%;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .netflix-card {
-
-    min-width: 100%;
-  }
-
-  section h2 {
-
-    font-size: 1.5rem;
-  }
-
-  .btn-slider {
-
-    width: 40px;
-    height: 40px;
-
-    font-size: 1rem;
-  }
-
-  .prev {
-
-    left: -10px;
-  }
-
-  .next {
-
-    right: -10px;
-  }
+.text-magenta {
+    color: #e0007f !important;
 }

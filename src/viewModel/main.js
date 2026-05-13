@@ -1,145 +1,91 @@
-async function cargarDatos(ruta) {
+/**
+ * Función principal para cargar todos los carruseles de la página Bok.
+ * Utiliza fetch para obtener los datos de los archivos JSON en la carpeta data.
+ */
+async function cargarCarruseles() {
+    console.log("Iniciando carga de datos desde JSON...");
 
-  try {
+    try {
+        // Cargar los tres archivos JSON de forma paralela para mayor velocidad
+        const [resMusica, resLibros, resObjetos] = await Promise.all([
+            fetch('../data/musica.json'),
+            fetch('../data/libros.json'),
+            fetch('../data/objetos.json')
+        ]);
 
-    const response = await fetch(ruta);
+        // Verificar que las respuestas sean correctas (Status 200)
+        if (!resMusica.ok || !resLibros.ok || !resObjetos.ok) {
+            throw new Error("No se pudo encontrar uno o más archivos JSON. Verifica las rutas.");
+        }
 
-    return await response.json();
+        const musica = await resMusica.json();
+        const libros = await resLibros.json();
+        const objetos = await resObjetos.json();
 
-  } catch (error) {
+        // Renderizar cada categoría en su respectivo contenedor
+        renderizar(musica, 'contenedor-musica');
+        renderizar(libros, 'contenedor-libros');
+        renderizar(objetos, 'contenedor-objetos');
 
-    console.error(error);
+        console.log("Carga finalizada con éxito.");
 
-    return [];
-  }
-}
-
-function crearCarrusel(idContenedor, datos) {
-
-  const contenedor = document.getElementById(idContenedor);
-
-  let currentIndex = 0;
-
-  const visibles = 3;
-
-  let html = `
-
-    <div class="netflix-wrapper">
-
-      <button class="btn-slider prev">
-        ◀
-      </button>
-
-      <div class="netflix-container">
-
-        <div class="netflix-track">
-  `;
-
-  datos.forEach((item) => {
-
-    html += `
-
-      <div class="netflix-card">
-
-        <div class="card text-center p-3">
-
-          <img
-            src="${item.imagen}"
-            class="img-fluid rounded mb-3"
-            alt="${item.titulo}"
-          >
-
-          <h5 class="card-title">
-            ${item.titulo}
-          </h5>
-
-          ${
-            item.autor
-              ? `<p class="text-muted">${item.autor}</p>`
-              : ''
-          }
-
-          ${
-            item.artista
-              ? `<p class="text-muted">${item.artista}</p>`
-              : ''
-          }
-
-          <p class="card-precio">
-            $${item.costo} MXN
-          </p>
-
-        </div>
-
-      </div>
-    `;
-  });
-
-  html += `
-
-        </div>
-
-      </div>
-
-      <button class="btn-slider next">
-        ▶
-      </button>
-
-    </div>
-  `;
-
-  contenedor.innerHTML = html;
-
-  const track = contenedor.querySelector('.netflix-track');
-
-  const nextBtn = contenedor.querySelector('.next');
-
-  const prevBtn = contenedor.querySelector('.prev');
-
-  const total = datos.length;
-
-  function actualizarCarrusel() {
-
-    const porcentaje = 100 / visibles;
-
-    track.style.transform =
-      \`translateX(-\${currentIndex * porcentaje}%)\`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-
-    if (currentIndex < total - visibles) {
-
-      currentIndex++;
-
-      actualizarCarrusel();
+    } catch (error) {
+        console.error("Error en la carga de carruseles:", error);
+        alert("Error al cargar los productos. Asegúrate de usar 'Live Server' en VS Code.");
     }
-  });
-
-  prevBtn.addEventListener('click', () => {
-
-    if (currentIndex > 0) {
-
-      currentIndex--;
-
-      actualizarCarrusel();
-    }
-  });
 }
 
-async function iniciar() {
+/**
+ * Función para generar el HTML de las tarjetas e inyectarlas al DOM.
+ */
+function renderizar(lista, idContenedor) {
+    const contenedor = document.getElementById(idContenedor);
+    if (!contenedor) return;
 
-  const libros = await cargarDatos('../data/libros.json');
+    let htmlTemporal = "";
 
-  const musica = await cargarDatos('../data/musica.json');
+    lista.forEach(item => {
+        const creador = item.autor || item.marca || "Varios";
+        
+        htmlTemporal += `
+            <div class="card-item shadow-sm">
+                <!-- Contenedor de la imagen y la descripción extendida -->
+                <div class="card-media">
+                    <img src="${item.imagen}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/200x200?text=Error'">
+                    
+                    <!-- Esta es la extensión del objeto con la descripción -->
+                    <div class="card-description-overlay">
+                        <p>${item.descripcion || "Sin descripción disponible."}</p>
+                    </div>
+                </div>
 
-  const objetos = await cargarDatos('../data/objetos.json');
-
-  crearCarrusel('libros-container', libros);
-
-  crearCarrusel('musica-container', musica);
-
-  crearCarrusel('objetos-container', objetos);
+                <div class="card-info">
+                    <h6>${item.titulo}</h6>
+                    <p class="text-muted small mb-1">${creador} (${item.anio})</p>
+                    <p class="fw-bold text-magenta mb-0">$${Number(item.precio).toFixed(2)}</p>
+                </div>
+            </div>
+        `;
+    });
+    contenedor.innerHTML = htmlTemporal;
 }
 
-iniciar();
+/**
+ * Función para mostrar la descripción al "picarle" a la tarjeta.
+ * Se activa mediante el evento onclick definido en renderizar.
+ */
+function mostrarDetalles(item) {
+    const creador = item.autor || item.marca || "Varios";
+    
+    // Mostramos la descripción y detalles completos en una ventana emergente
+    alert(
+        `📖 DETALLES DEL PRODUCTO\n\n` +
+        `Título: ${item.titulo}\n` +
+        `Por: ${creador} (${item.anio})\n\n` +
+        `DESCRIPCIÓN:\n${item.descripcion || "Sin descripción disponible."}\n\n` +
+        `Precio: $${Number(item.precio).toFixed(2)}`
+    );
+}
+
+// Escuchar cuando el HTML esté listo para ejecutar la lógica
+document.addEventListener('DOMContentLoaded', cargarCarruseles);

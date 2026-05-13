@@ -1,32 +1,5 @@
 [
-  {
-    "id": 1,
-    "titulo": "Taza Vintage",
-    "costo": 250,
-    "imagen": "../img/taza.jpg"
-  },
-  {
-    "id": 2,
-    "titulo": "Lámpara Retro",
-    "costo": 540,
-    "imagen": "../img/lampara.jpg"
-  },
-  {
-    "id": 3,
-    "titulo": "Agenda 2026",
-    "costo": 180,
-    "imagen": "../img/agenda.jpg"
-  },
-  {
-    "id": 4,
-    "titulo": "Llavero Geek",
-    "costo": 90,
-    "imagen": "../img/llavero.jpg"
-  },
-  {
-    "id": 5,
-    "titulo": "Mousepad Gamer",
-    "costo": 320,
-    "imagen": "../img/mousepad.jpg"
-  }
+  { "id": 1, "titulo": "Taza Cerámica BOAK", "autor": "Artesanías MX", "anio": 2026, "precio": 150.00, "imagen": "https://via.placeholder.com/200x200?text=Taza" },
+  { "id": 2, "titulo": "Separador de piel", "autor": "Bok Studio", "anio": 2025, "precio": 85.00, "imagen": "https://via.placeholder.com/200x200?text=Separador" },
+  { "id": 3, "titulo": "Lámpara de lectura", "autor": "TechLight", "anio": 2026, "precio": 420.00, "imagen": "https://via.placeholder.com/200x200?text=Lampara" }
 ]
