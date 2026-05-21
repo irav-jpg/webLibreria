@@ -1,5 +1,92 @@
 [
-  { "id": 1, "titulo": "Taza Cerámica BOAK", "autor": "Artesanías MX", "anio": 2026, "precio": 150.00, "imagen": "https://via.placeholder.com/200x200?text=Taza" },
-  { "id": 2, "titulo": "Separador de piel", "autor": "Bok Studio", "anio": 2025, "precio": 85.00, "imagen": "https://via.placeholder.com/200x200?text=Separador" },
-  { "id": 3, "titulo": "Lámpara de lectura", "autor": "TechLight", "anio": 2026, "precio": 420.00, "imagen": "https://via.placeholder.com/200x200?text=Lampara" }
+  {
+    "id": 1,
+    "titulo": "Taza Bajo el Membrillo",
+    "marca": "Bajo el Membrillo",
+    "anio": 2026,
+    "precio": 189.00,
+    "descripcion": "Taza de cerámica inspirada en tardes de lectura y café.",
+    "imagen":"../img/tazamembrillo1.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Separador Botánico",
+    "marca": "Leaf Studio",
+    "anio": 2025,
+    "precio": 79.00,
+    "descripcion": "Separador magnético con ilustraciones botánicas y acabado mate.",
+    "imagen": "../img/separador.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Lámpara de Lectura LED",
+    "marca": "Lumina",
+    "anio": 2026,
+    "precio": 349.00,
+    "descripcion": "Lámpara portátil recargable ideal para leer de noche.",
+    "imagen": "../img/lamparaLED.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Libreta Café Vintage",
+    "marca": "Paper Dreams",
+    "anio": 2025,
+    "precio": 145.00,
+    "descripcion": "Libreta de pasta dura con diseño vintage y hojas gruesas.",
+    "imagen": "../img/libreta.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "Bolsa Tote Literaria",
+    "marca": "Bajo el Membrillo",
+    "anio": 2026,
+    "precio": 220.00,
+    "descripcion": "Bolsa de tela reutilizable con frases literarias bordadas.",
+    "imagen": "../img/tote.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "Pluma Fuente Clásica",
+    "marca": "InkSoul",
+    "anio": 2025,
+    "precio": 499.00,
+    "descripcion": "Pluma elegante para escritura suave y precisa.",
+    "imagen": "../img/plumafuente.jpg"
+  },
+  {
+    "id": 7,
+    "titulo": "Soporte de Madera para Libros",
+    "marca": "WoodCraft",
+    "anio": 2026,
+    "precio": 315.00,
+    "descripcion": "Soporte artesanal ajustable para lectura cómoda.",
+    "imagen": "../img/soporte.jpg"
+  },
+  {
+    "id": 8,
+    "titulo": "Vela Aromática Vainilla",
+    "marca": "Cozy Pages",
+    "anio": 2026,
+    "precio": 165.00,
+    "descripcion": "Veladora aromática ideal para acompañar sesiones de lectura.",
+    "imagen": "../img/vela.jpg"
+  },
+  {
+    "id": 9,
+    "titulo": "Estuche Minimalista",
+    "marca": "Mono Studio",
+    "anio": 2025,
+    "precio": 130.00,
+    "descripcion": "Estuche elegante para plumas, marcadores y accesorios.",
+    "imagen": "../img/estuche.jpg"
+  },
+  {
+    "id": 10,
+    "titulo": "Set de Post-its Literarios",
+    "marca": "Book Notes",
+    "anio": 2026,
+    "precio": 95.00,
+    "descripcion": "Notas adhesivas decorativas para marcar tus lecturas favoritas.",
+    "imagen": "../img/postits.jpg"
+  }
 ]

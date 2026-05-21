@@ -5,7 +5,7 @@
     "autor": "J.K. Rowling",
     "anio": 1997,
     "precio": 399.00,
-    "descripcion": "Un niño descubre que es mago y asiste a una escuela de magia.",
+    "descripcion": "Un niño descubre que es mago y comienza una aventura mágica en Hogwarts.",
     "imagen": "../img/pottah.jpg"
   },
   {
@@ -14,6 +14,7 @@
     "autor": "William Shakespeare",
     "anio": 1597,
     "precio": 150.00,
+    "descripcion": "Dos jóvenes enamorados desafían el odio entre sus familias en Verona.",
     "imagen": "../img/romeo.jpg"
   },
   {
@@ -22,6 +23,7 @@
     "autor": "Lewis Carroll",
     "anio": 1865,
     "precio": 180.00,
+    "descripcion": "Alicia cae en un mundo fantástico lleno de criaturas extrañas y aventuras.",
     "imagen": "../img/alicia.jpg"
   },
   {
@@ -30,6 +32,7 @@
     "autor": "Stephen King",
     "anio": 2019,
     "precio": 450.00,
+    "descripcion": "Niños con habilidades especiales son llevados a un misterioso instituto.",
     "imagen": "../img/instituto.jpg"
   },
   {
@@ -38,6 +41,7 @@
     "autor": "Mario Puzo",
     "anio": 1969,
     "precio": 320.00,
+    "descripcion": "La historia de poder, familia y crimen dentro de la mafia italiana.",
     "imagen": "../img/padrino.jpg"
   },
   {
@@ -46,6 +50,7 @@
     "autor": "Anthony Burgess",
     "anio": 1962,
     "precio": 280.00,
+    "descripcion": "Un joven violento enfrenta un experimento psicológico en una sociedad futurista.",
     "imagen": "../img/naranja.jpg"
   },
   {
@@ -54,6 +59,7 @@
     "autor": "Carlos Ruiz Zafón",
     "anio": 2001,
     "precio": 380.00,
+    "descripcion": "Un niño descubre un libro maldito que cambiará su vida para siempre.",
     "imagen": "../img/viento.jpg"
   },
   {
@@ -62,6 +68,7 @@
     "autor": "John Green",
     "anio": 2012,
     "precio": 250.00,
+    "descripcion": "Dos adolescentes con cáncer viven una intensa historia de amor y esperanza.",
     "imagen": "../img/strella.jpg"
   },
   {
@@ -70,6 +77,7 @@
     "autor": "J.R.R. Tolkien",
     "anio": 1937,
     "precio": 350.00,
+    "descripcion": "Bilbo Bolsón emprende una aventura épica junto a un grupo de enanos.",
     "imagen": "../img/hobbit.jpg"
   },
   {
@@ -78,6 +86,7 @@
     "autor": "Diana Wynne Jones",
     "anio": 1986,
     "precio": 290.00,
+    "descripcion": "Una joven hechizada conoce a un misterioso mago y su castillo mágico.",
     "imagen": "../img/castillo.jpg"
   }
 ]

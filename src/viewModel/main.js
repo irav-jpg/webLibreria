@@ -48,7 +48,9 @@ function renderizar(lista, idContenedor) {
         const creador = item.autor || item.marca || "Varios";
         
         htmlTemporal += `
-            <div class="card-item shadow-sm">
+            <div class="card-item shadow-sm"
+            onclick='mostrarDetalles(${JSON.stringify(item)})'>
+
                 <!-- Contenedor de la imagen y la descripción extendida -->
                 <div class="card-media">
                     <img src="${item.imagen}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/200x200?text=Error'">
@@ -67,6 +69,24 @@ function renderizar(lista, idContenedor) {
             </div>
         `;
     });
+    let paginaDestino = "";
+
+if(idContenedor === "contenedor-libros"){
+    paginaDestino = "libros.html";
+}
+else if(idContenedor === "contenedor-musica"){
+    paginaDestino = "musica.html";
+}
+else if(idContenedor === "contenedor-objetos"){
+    paginaDestino = "objetos.html";
+}
+
+htmlTemporal += `
+    <a href="${paginaDestino}" class="ver-mas-card">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+        <span>Ver más</span>
+    </a>
+`;
     contenedor.innerHTML = htmlTemporal;
 }
 

@@ -9,13 +9,13 @@ body::-webkit-scrollbar {
     width: 8px;
 }
 body::-webkit-scrollbar-thumb {
-    background: #e0007f;
+    background: #F2DC99;
     border-radius: 10px;
 }
 
 /* Navbar personalizado */
 .navbar-custom {
-            background-color: #e0007f; /* Color magenta */
+            background-color: #EC9EC0; 
             padding: 0.5rem 0;
         }
 
@@ -25,6 +25,8 @@ body::-webkit-scrollbar-thumb {
             font-size: 1.6rem;
             color: white !important;
             margin: 0;
+            letter-spacing: 1px;
+            font-family: Georgia, serif;
         }
 
         /* Botón Categorías */
@@ -38,7 +40,7 @@ body::-webkit-scrollbar-thumb {
             gap: 5px;
         }
 
-        /* Buscador Estilo Liverpool */
+        /* Buscador  */
         .search-group {
             background-color: white;
             border-radius: 50px; /* Forma de cápsula */
@@ -55,7 +57,7 @@ body::-webkit-scrollbar-thumb {
         }
 
         .search-group i {
-            color: #666;
+            color: #81178b;
             font-size: 1.1rem;
         }
 
@@ -68,6 +70,8 @@ body::-webkit-scrollbar-thumb {
             gap: 8px;
             font-size: 0.9rem;
             font-weight: 500;
+            font-family: Georgia, serif;
+
         }
 
         .nav-link-custom i {
@@ -108,12 +112,12 @@ body::-webkit-scrollbar-thumb {
     flex: 0 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative; /* Necesario para la extensión de descripción */
+    border: 1px solid #eee;
 }
 
 .card-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
-}
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;}
 
 /* --- CONTENEDOR DE IMAGEN Y DESCRIPCIÓN EXTENDIDA --- */
 .card-media {
@@ -126,7 +130,7 @@ body::-webkit-scrollbar-thumb {
     aspect-ratio: 1/1; 
     object-fit: cover;
     display: block;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 /* Esta es la "extensión" que muestra solo la descripción */
@@ -136,8 +140,8 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(224, 0, 127, 0.9); /* Magenta Boak */
-    color: white;
+    background: rgba(140, 71, 152, 0.88);    
+    color: white;    
     padding: 15px;
     display: flex;
     align-items: center;
@@ -147,6 +151,8 @@ body::-webkit-scrollbar-thumb {
     opacity: 0; /* Invisible por defecto */
     transition: opacity 0.3s ease;
     pointer-events: none;
+    font-family: Georgia, serif;
+
 }
 
 /* Mostrar la extensión al pasar el cursor */
@@ -170,5 +176,58 @@ body::-webkit-scrollbar-thumb {
 }
 
 .text-magenta {
-    color: #e0007f !important;
+    color: #8c0963 !important;
+}
+
+.section-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    font-family: Georgia, serif;
+
+}
+.titulo-libros{
+    color: #A97C73;
+}
+
+.titulo-musica{
+    color: #e08def;
+}
+
+.titulo-objetos{
+    color: #93C572;
+}
+
+.section-container{
+    margin-bottom: 40px;
+}
+.ver-mas-card{
+    min-width: 200px;
+    max-width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #d394f5;
+
+    transition: all 0.3s ease;
+}
+
+.ver-mas-card i{
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+
+.ver-mas-card span{
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.ver-mas-card:hover{
+    transform: scale(1.08);
+    color: #7b0e83;
 }
