@@ -23,10 +23,9 @@ async function cargarCarruseles() {
         const objetos = await resObjetos.json();
 
         // Renderizar cada categoría en su respectivo contenedor
-        renderizar(musica, 'contenedor-musica');
-        renderizar(libros, 'contenedor-libros');
-        renderizar(objetos, 'contenedor-objetos');
-
+        renderizar(musica.slice(0, 10), 'contenedor-musica');
+        renderizar(libros.slice(0, 10), 'contenedor-libros');
+        renderizar(objetos.slice(0, 10), 'contenedor-objetos');
         console.log("Carga finalizada con éxito.");
 
     } catch (error) {
