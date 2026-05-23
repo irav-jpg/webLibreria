@@ -90,18 +90,41 @@ function renderizarLibros(lista){
 ========================= */
 
 function aplicarFiltros(){
-
     const categoria =
-        document.getElementById("filtro-categoria").value;
+        document.getElementById("filtro-categoria").value
+        ||
+        document.getElementById("filtro-categoria-mobile").value;
 
     const editorial =
-        document.getElementById("filtro-editorial").value;
+        document.getElementById("filtro-editorial").value
+        ||
+        document.getElementById("filtro-editorial-mobile").value;
 
     const idioma =
-        document.getElementById("filtro-idioma").value;
+        document.getElementById("filtro-idioma").value
+        ||
+        document.getElementById("filtro-idioma-mobile").value;
 
-    const precio =
-        Number(document.getElementById("filtro-precio").value);
+    let precio;
+
+    if(window.innerWidth < 992){
+
+        precio = Number(
+            document.getElementById(
+                "filtro-precio-mobile"
+            ).value
+        );
+
+    }else{
+
+        precio = Number(
+            document.getElementById(
+                "filtro-precio"
+            ).value
+        );
+
+    }
+
 
     const busqueda =
         document
@@ -151,25 +174,113 @@ function aplicarFiltros(){
 
 document
 .getElementById("filtro-categoria")
-.addEventListener("change", aplicarFiltros);
+.addEventListener("change", function(){
 
+    document.getElementById(
+        "filtro-categoria-mobile"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
 
 document
 .getElementById("filtro-editorial")
-.addEventListener("change", aplicarFiltros);
+.addEventListener("change", function(){
+
+    document.getElementById(
+        "filtro-editorial-mobile"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
 
 
 document
 .getElementById("filtro-idioma")
-.addEventListener("change", aplicarFiltros);
+.addEventListener("change", function(){
+
+    document.getElementById(
+        "filtro-idioma-mobile"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
 
 
 document
 .getElementById("filtro-precio")
 .addEventListener("input", function(){
 
-    document.getElementById("precio-valor")
-    .textContent = this.value;
+    document.getElementById(
+        "precio-valor"
+    ).textContent = this.value;
+
+    document.getElementById(
+        "filtro-precio-mobile"
+    ).value = this.value;
+
+    document.getElementById(
+        "precio-valor-mobile"
+    ).textContent = this.value;
+
+    aplicarFiltros();
+
+});
+
+document
+.getElementById("filtro-categoria-mobile")
+.addEventListener("change", function(){
+
+    document.getElementById(
+        "filtro-categoria"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
+
+document
+.getElementById("filtro-editorial-mobile")
+.addEventListener("change", function(){
+
+    document.getElementById(
+        "filtro-editorial"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
+
+document
+.getElementById("filtro-idioma-mobile")
+.addEventListener("change", function(){
+
+    document.getElementById(
+        "filtro-idioma"
+    ).value = this.value;
+
+    aplicarFiltros();
+
+});
+
+document
+.getElementById("filtro-precio-mobile")
+.addEventListener("input", function(){
+
+    document.getElementById(
+        "precio-valor-mobile"
+    ).textContent = this.value;
+
+    document.getElementById(
+        "filtro-precio"
+    ).value = this.value;
+
+    document.getElementById(
+        "precio-valor"
+    ).textContent = this.value;
 
     aplicarFiltros();
 

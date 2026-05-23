@@ -89,7 +89,7 @@
                     type="text"
                     id="buscador-libros"
                     class="form-control"
-                    placeholder="Buscar libro..."
+                    placeholder="Buscar libro por título..."
                 >
 
             </div>
@@ -162,6 +162,107 @@
 
         </aside>
 
+        <!-- FILTROS MOBILE -->
+    <div class="d-lg-none mb-4">
+
+        <button
+            class="btn w-100 btn-filtros-mobile"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#filtrosMobile">
+
+            <i class="bi bi-sliders"></i>
+            Filtrar libros
+
+        </button>
+
+    <div class="collapse mt-3" id="filtrosMobile">
+
+        <div class="card card-body">
+
+            <!-- Categoría -->
+            <div class="mb-3">
+
+                <h6>Categoría</h6>
+
+                <select id="filtro-categoria-mobile"
+                        class="form-select">
+
+                    <option value="">Todas</option>
+                    <option value="Fantasia">Fantasía</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Terror">Drama</option>
+
+                </select>
+
+            </div>
+
+            <!-- Editorial -->
+            <div class="mb-3">
+
+                <h6>Editorial</h6>
+
+                <select id="filtro-editorial-mobile"
+                        class="form-select">
+
+                    <option value="">Todas</option>
+                    <option value="Salamandra">Salamandra</option>
+                    <option value="Planeta">Planeta</option>
+                    <option value="Minotauro">Minotauro</option>
+                    <option value="Debolsillo">Debolsillo</option>
+                    <option value="Penguin Classics">Penguin Classics</option>
+                    <option value="Alfaguara">Alfaguara</option>
+                    <option value="Austral">Austral</option>
+                    <option value="Nocturna">Nocturna</option>
+                    <option value="Molino">Molino</option>
+                    <option value="Destino">Destino</option>
+
+                </select>
+
+            </div>
+
+            <!-- Idioma -->
+            <div class="mb-3">
+
+                <h6>Idioma</h6>
+
+                <select id="filtro-idioma-mobile"
+                        class="form-select">
+
+                    <option value="">Todos</option>
+                    <option value="Español">Español</option>
+                    <option value="Inglés">Inglés</option>
+
+                </select>
+
+            </div>
+
+            <!-- Precio -->
+            <div>
+
+                <h6>Precio máximo</h6>
+
+                <input
+                    type="range"
+                    id="filtro-precio-mobile"
+                    min="100"
+                    max="600"
+                    value="600"
+                    class="form-range"
+                >
+                <p class="mt-2">
+                    $<span id="precio-valor-mobile">600</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
         <!-- PRODUCTOS -->
         <section class="col-lg-9">
 
@@ -180,7 +281,8 @@
 
 </main>
 
-<script src="../viewModel/libros.js"></script>
+    <script src="../viewModel/libros.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

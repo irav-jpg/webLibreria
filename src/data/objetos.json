@@ -2,17 +2,15 @@
   {
     "id": 1,
     "titulo": "Taza Bajo el Membrillo",
-    "marca": "Bajo el Membrillo",
-    "anio": 2026,
+    "categoria": "Tazas",
     "precio": 189.00,
     "descripcion": "Taza de cerámica inspirada en tardes de lectura y café.",
-    "imagen":"../img/tazamembrillo1.jpg"
+    "imagen": "../img/tazamembrillo1.jpg"
   },
   {
     "id": 2,
     "titulo": "Separador Botánico",
-    "marca": "Leaf Studio",
-    "anio": 2025,
+    "categoria": "Accesorios de lectura",
     "precio": 79.00,
     "descripcion": "Separador magnético con ilustraciones botánicas y acabado mate.",
     "imagen": "../img/separador.jpg"
@@ -20,8 +18,7 @@
   {
     "id": 3,
     "titulo": "Lámpara de Lectura LED",
-    "marca": "Lumina",
-    "anio": 2026,
+    "categoria": "Accesorios de lectura",
     "precio": 349.00,
     "descripcion": "Lámpara portátil recargable ideal para leer de noche.",
     "imagen": "../img/lamparaLED.jpg"
@@ -29,8 +26,7 @@
   {
     "id": 4,
     "titulo": "Libreta Café Vintage",
-    "marca": "Paper Dreams",
-    "anio": 2025,
+    "categoria": "Papelería",
     "precio": 145.00,
     "descripcion": "Libreta de pasta dura con diseño vintage y hojas gruesas.",
     "imagen": "../img/libreta.jpg"
@@ -38,8 +34,7 @@
   {
     "id": 5,
     "titulo": "Bolsa Tote Literaria",
-    "marca": "Bajo el Membrillo",
-    "anio": 2026,
+    "categoria": "Accesorios de lectura",
     "precio": 220.00,
     "descripcion": "Bolsa de tela reutilizable con frases literarias bordadas.",
     "imagen": "../img/tote.jpg"
@@ -47,8 +42,7 @@
   {
     "id": 6,
     "titulo": "Pluma Fuente Clásica",
-    "marca": "InkSoul",
-    "anio": 2025,
+    "categoria": "Papelería",
     "precio": 499.00,
     "descripcion": "Pluma elegante para escritura suave y precisa.",
     "imagen": "../img/plumafuente.jpg"
@@ -56,8 +50,7 @@
   {
     "id": 7,
     "titulo": "Soporte de Madera para Libros",
-    "marca": "WoodCraft",
-    "anio": 2026,
+    "categoria": "Accesorios de lectura",
     "precio": 315.00,
     "descripcion": "Soporte artesanal ajustable para lectura cómoda.",
     "imagen": "../img/soporte.jpg"
@@ -65,8 +58,7 @@
   {
     "id": 8,
     "titulo": "Vela Aromática Vainilla",
-    "marca": "Cozy Pages",
-    "anio": 2026,
+    "categoria": "Accesorios de lectura",
     "precio": 165.00,
     "descripcion": "Veladora aromática ideal para acompañar sesiones de lectura.",
     "imagen": "../img/vela.jpg"
@@ -74,8 +66,7 @@
   {
     "id": 9,
     "titulo": "Estuche Minimalista",
-    "marca": "Mono Studio",
-    "anio": 2025,
+    "categoria": "Papelería",
     "precio": 130.00,
     "descripcion": "Estuche elegante para plumas, marcadores y accesorios.",
     "imagen": "../img/estuche.jpg"
@@ -83,10 +74,169 @@
   {
     "id": 10,
     "titulo": "Set de Post-its Literarios",
-    "marca": "Book Notes",
-    "anio": 2026,
+    "categoria": "Papelería",
     "precio": 95.00,
     "descripcion": "Notas adhesivas decorativas para marcar tus lecturas favoritas.",
     "imagen": "../img/postits.jpg"
+  },
+  {
+    "id": 11,
+    "titulo": "Agenda Perpetua Astral",
+    "categoria": "Agendas",
+    "precio": 280.00,
+    "descripcion": "Agenda sin fechas con ilustraciones del zodiaco y mapa estelar.",
+    "imagen": "../img/agendaastral.jpg"
+  },
+  {
+    "id": 12,
+    "titulo": "Calendario de Escritorio Paisajes",
+    "categoria": "Calendarios",
+    "precio": 150.00,
+    "descripcion": "Calendario mensual con acuarelas de la naturaleza inspiradoras.",
+    "imagen": "../img/calpaisajes.jpg"
+  },
+  {
+    "id": 13,
+    "titulo": "Taza de Cerámica Enlozada",
+    "categoria": "Tazas",
+    "precio": 175.00,
+    "descripcion": "Taza estilo retro ideal para fogatas o tu café matutino.",
+    "imagen": "../img/tazaenlozado.jpg"
+  },
+  {
+    "id": 14,
+    "titulo": "Set de Marcadores Pastel",
+    "categoria": "Papelería",
+    "precio": 110.00,
+    "descripcion": "Seis resaltadores de tonos suaves que no traspasan el papel.",
+    "imagen": "../img/marcadores.jpg"
+  },
+  {
+    "id": 15,
+    "titulo": "Agenda Ejecutiva de Piel",
+    "categoria": "Agendas",
+    "precio": 420.00,
+    "descripcion": "Agenda elegante vista semanal con cubierta de piel sintética.",
+    "imagen": "../img/agendapiel.jpg"
+  },
+  {
+    "id": 16,
+    "titulo": "Calendario de Pared Botánico",
+    "categoria": "Calendarios",
+    "precio": 195.00,
+    "descripcion": "Calendario grande para colgar con hermosas ilustraciones florales.",
+    "imagen": "../img/calbotanico.jpg"
+  },
+  {
+    "id": 17,
+    "titulo": "Taza Termo Viajera",
+    "categoria": "Tazas",
+    "precio": 299.00,
+    "descripcion": "Taza térmica de acero inoxidable con tapa hermética antiderrames.",
+    "imagen": "../img/tazatermo.jpg"
+  },
+  {
+    "id": 18,
+    "titulo": "Cuaderno de Dibujo Artístico",
+    "categoria": "Papelería",
+    "precio": 210.00,
+    "descripcion": "Hojas de alto gramaje perfectas para bocetos, tinta y acuarela.",
+    "imagen": "../img/cuadernodibujo.jpg"
+  },
+  {
+    "id": 19,
+    "titulo": "Agenda Diaria Creativa",
+    "categoria": "Agendas",
+    "precio": 310.00,
+    "descripcion": "Una página por día con espacio para notas, metas y habit tracker.",
+    "imagen": "../img/agendacreativa.jpg"
+  },
+  {
+    "id": 20,
+    "titulo": "Planificador Mensual de Escritorio",
+    "categoria": "Calendarios",
+    "precio": 135.00,
+    "descripcion": "Block de hojas desprendibles para organizar tus semanas de un vistazo.",
+    "imagen": "../img/planificador.jpg"
+  },
+  {
+    "id": 21,
+    "titulo": "Taza Minimalista de Vidrio",
+    "categoria": "Tazas",
+    "precio": 160.00,
+    "descripcion": "Taza de borosilicato resistente al calor con asa de color.",
+    "imagen": "../img/tazavidrio.jpg"
+  },
+  {
+    "id": 22,
+    "titulo": "Cinta Washi Tape Set Flora",
+    "categoria": "Papelería",
+    "precio": 85.00,
+    "descripcion": "Paquete con 4 cintas decorativas de papel japonés para bullet journal.",
+    "imagen": "../img/washitape.jpg"
+  },
+  {
+    "id": 23,
+    "titulo": "Agenda Minimalista Negra",
+    "categoria": "Agendas",
+    "precio": 260.00,
+    "descripcion": "Diseño sobrio y elegante con listón marcador y sobre interior.",
+    "imagen": "../img/agendanegra.jpg"
+  },
+  {
+    "id": 24,
+    "titulo": "Calendario Mini Magnético",
+    "categoria": "Calendarios",
+    "precio": 65.00,
+    "descripcion": "Ideal para colocar en el refrigerador o en superficies metálicas.",
+    "imagen": "../img/calmini.jpg"
+  },
+  {
+    "id": 25,
+    "titulo": "Taza de Cerámica Hecha a Mano",
+    "categoria": "Tazas",
+    "precio": 240.00,
+    "descripcion": "Pieza única de cerámica artesanal con esmalte reactivo.",
+    "imagen": "../img/tazaartesanal.jpg"
+  },
+  {
+    "id": 26,
+    "titulo": "Set de Bolígrafos de Gel",
+    "categoria": "Papelería",
+    "precio": 120.00,
+    "descripcion": "Bolígrafos de tinta negra con punto fino y secado rápido.",
+    "imagen": "../img/plumasgel.jpg"
+  },
+  {
+    "id": 27,
+    "titulo": "Diario de Lecturas (Book Journal)",
+    "categoria": "Agendas",
+    "precio": 190.00,
+    "descripcion": "Espacio diseñado para reseñar tus libros, retos de lectura y citas favoritas.",
+    "imagen": "../img/diariolectura.jpg"
+  },
+  {
+    "id": 28,
+    "titulo": "Calendario de Escritorio Vintage",
+    "categoria": "Calendarios",
+    "precio": 140.00,
+    "descripcion": "Estilo tipográfico antiguo impreso en papel kraft texturizado.",
+    "imagen": "../img/calvintage.jpg"
+  },
+  {
+    "id": 29,
+    "titulo": "Cojín de Lectura Ergonómico",
+    "categoria": "Accesorios de lectura",
+    "precio": 380.00,
+    "descripcion": "Cojín diseñado para dar soporte a la espalda mientras lees en la cama.",
+    "imagen": "../img/cojinlectura.jpg"
+  },
+  {
+    "id": 30,
+    "titulo": "Lupa de Página con Luz",
+    "categoria": "Accesorios de lectura",
+    "precio": 155.00,
+    "descripcion": "Lupa delgada de formato hoja completa con iluminación LED integrada.",
+    "imagen": "../img/lupalectura.jpg"
   }
 ]
