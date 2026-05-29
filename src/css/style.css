@@ -340,3 +340,78 @@ main{
 .btn-filtros-mobile:hover{
     background-color: #EC9EC0;
 }
+
+
+/* ======================================
+   DISEÑO CARRUSEL
+====================================== */
+/* --- CORRECCIÓN MARQUEE INFINITO (Mantiene el diseño original) --- */
+/* --- CORRECCIÓN DEFINITIVA DE MOVIMIENTO HORIZONTAL --- */
+.carousel-netflix {
+    width: 100%;
+    overflow: hidden !important; /* Esconde lo que se sale de la pantalla */
+    display: flex !important;
+    position: relative;
+}
+
+.marquee-track-custom {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* <-- CORREGIDO: Esto evita que se congele la pista */
+    gap: 20px;
+    padding: 20px 5px;
+    will-change: transform;
+    width: max-content !important; /* Permite que la fila se estienda infinitamente a la derecha */
+}
+
+/* Forzar a que las tarjetas mantengan sus 200px originales en la fila */
+.card-item, .ver-mas-card {
+    flex: 0 0 auto !important;
+}
+
+/* --- BOTONES VER MÁS PERSONALIZADOS PARA CADA CATEGORÍA --- */
+.btn-ver-mas {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 8px 24px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+/* Variación Libros (#A97C73) */
+.btn-libros {
+    color: #A97C73;
+    border: 2px solid #A97C73;
+}
+.btn-libros:hover {
+    background-color: #A97C73;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Variación Música (#e08def) */
+.btn-musica {
+    color: #e08def;
+    border: 2px solid #e08def;
+}
+.btn-musica:hover {
+    background-color: #e08def;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Variación Objetos (#93C572) */
+.btn-objetos {
+    color: #93C572;
+    border: 2px solid #93C572;
+}
+.btn-objetos:hover {
+    background-color: #93C572;
+    color: white !important;
+    transform: translateY(-2px);
+}

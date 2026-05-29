@@ -28,6 +28,9 @@ async function cargarCarruseles() {
         renderizar(objetos.slice(0, 10), 'contenedor-objetos');
         console.log("Carga finalizada con éxito.");
 
+        // Activamos la marquesina
+        activarEfectoMarquee();
+
     } catch (error) {
         console.error("Error en la carga de carruseles:", error);
         alert("Error al cargar los productos. Asegúrate de usar 'Live Server' en VS Code.");
@@ -36,12 +39,14 @@ async function cargarCarruseles() {
 
 /**
  * Función para generar el HTML de las tarjetas e inyectarlas al DOM.
+ * Solo genera tarjetas puras para que el bucle continuo no se desfase.
  */
 function renderizar(lista, idContenedor) {
     const contenedor = document.getElementById(idContenedor);
     if (!contenedor) return;
 
-    let htmlTemporal = "";
+    // Abrimos la pista interna que se va a mover de forma horizontal
+    let htmlTemporal = `<div class="marquee-track-custom">`;
 
     lista.forEach(item => {
         const creador = item.autor || item.marca || "Varios";
@@ -50,11 +55,9 @@ function renderizar(lista, idContenedor) {
             <div class="card-item shadow-sm"
             onclick='mostrarDetalles(${JSON.stringify(item)})'>
 
-                <!-- Contenedor de la imagen y la descripción extendida -->
                 <div class="card-media">
                     <img src="${item.imagen}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/200x200?text=Error'">
                     
-                    <!-- Esta es la extensión del objeto con la descripción -->
                     <div class="card-description-overlay">
                         <p>${item.descripcion || "Sin descripción disponible."}</p>
                     </div>
@@ -68,35 +71,62 @@ function renderizar(lista, idContenedor) {
             </div>
         `;
     });
-    let paginaDestino = "";
 
-if(idContenedor === "contenedor-libros"){
-    paginaDestino = "libros.html";
-}
-else if(idContenedor === "contenedor-musica"){
-    paginaDestino = "musica.html";
-}
-else if(idContenedor === "contenedor-objetos"){
-    paginaDestino = "objetos.html";
-}
+    htmlTemporal += `</div>`; // Cerramos la pista interna .marquee-track-custom sin añadir botones extra
 
-htmlTemporal += `
-    <a href="${paginaDestino}" class="ver-mas-card">
-        <i class="bi bi-arrow-right-circle-fill"></i>
-        <span>Ver más</span>
-    </a>
-`;
     contenedor.innerHTML = htmlTemporal;
 }
 
 /**
+ * Función encargada de dar el efecto de marquesina infinita automatizada
+ */
+function activarEfectoMarquee() {
+    const carruseles = document.querySelectorAll(".carousel-netflix");
+
+    carruseles.forEach(carrusel => {
+        const track = carrusel.querySelector(".marquee-track-custom");
+        if (!track) return;
+
+        // 1. Duplicamos las tarjetas internas para crear la ilusión de bucle infinito
+        track.innerHTML += track.innerHTML;
+
+        let position = 0;
+        let animationId;
+
+        function animate() {
+            position -= 0.8; // Velocidad de desplazamiento ajustable
+
+            const mitadAncho = track.scrollWidth / 2;
+
+            // Si ya se desplazó todo el bloque original completo, reinicia a cero limpiamente
+            if (Math.abs(position) >= mitadAncho) {
+                position = 0;
+            }
+
+            track.style.transform = `translateX(${position}px)`;
+            animationId = requestAnimationFrame(animate);
+        }
+
+        // Encendemos la animación
+        animate();
+
+        // 3. Eventos para pausar la animación al pasar el mouse encima
+        carrusel.addEventListener("mouseenter", () => {
+            cancelAnimationFrame(animationId);
+        });
+
+        carrusel.addEventListener("mouseleave", () => {
+            animate();
+        });
+    });
+}
+
+/**
  * Función para mostrar la descripción al "picarle" a la tarjeta.
- * Se activa mediante el evento onclick definido en renderizar.
  */
 function mostrarDetalles(item) {
     const creador = item.autor || item.marca || "Varios";
     
-    // Mostramos la descripción y detalles completos en una ventana emergente
     alert(
         `📖 DETALLES DEL PRODUCTO\n\n` +
         `Título: ${item.titulo}\n` +
