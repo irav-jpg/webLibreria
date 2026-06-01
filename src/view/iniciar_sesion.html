@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bajo el Membrillo - Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="d-flex align-items-center justify-content-center login-container">
+
+    <div class="card login-card p-4">
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <div class="mb-2">
+                    <i class="bi bi-book-half fs-2 text-magenta-custom align-middle me-2"></i>
+                    <span class="fs-2 fw-bold text-dark text-nowrap" style="letter-spacing: 1px; vertical-align: middle;">Bajo el Membrillo</span>
+                </div>
+                <h5 class="login-title mb-3">Acceso al Sistema</h5>
+                <hr style="color: #F2DC99; height: 2px; opacity: 1;" class="w-25 mx-auto my-2">
+            </div>
+
+            <form id="loginForm">
+                
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label small fw-bold mb-2" style="color: #7c4a67; padding-left: 5px;">Correo electrónico</label>
+                    <div class="input-group-custom">
+                        <i class="bi bi-envelope me-2"></i>
+                        <input type="email" class="form-control" id="emailInput" placeholder="correo@ejemplo.com" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2" style="padding: 0 5px;">
+                        <label for="passwordInput" class="form-label small fw-bold mb-0" style="color: #7c4a67;">Contraseña</label>
+                        <a href="#" class="text-decoration-none small text-muted" style="font-size: 0.8rem;">¿La olvidaste?</a>
+                    </div>
+                    <div class="input-group-custom">
+                        <i class="bi bi-lock me-2"></i>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="mb-4 form-check d-flex align-items-center gap-2" style="padding-left: 25px;">
+                    <input type="checkbox" class="form-check-input mt-0" id="rememberCheck" style="cursor: pointer;">
+                    <label class="form-check-label small text-muted" for="rememberCheck" style="cursor: pointer; font-size: 0.85rem;">Mantener sesión iniciada</label>
+                </div>
+
+                <button type="submit" class="btn btn-login-custom w-100 d-flex align-items-center justify-content-center gap-2 shadow-sm">
+                    <i class="bi bi-box-arrow-in-right"></i> Ingresar al Panel
+                </button>
+            </form>
+
+            <div class="text-center mt-4">
+                <a href="index.html" class="text-decoration-none small" style="color: #A97C73; font-weight: 600;">
+                    <i class="bi bi-arrow-left me-1"></i> Volver a la tienda
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../viewModel/login.js"></script>
+</body>
+</html>

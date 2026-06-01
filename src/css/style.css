@@ -415,3 +415,166 @@ main{
     color: white !important;
     transform: translateY(-2px);
 }
+
+/* ==========================================================================
+   SECCIÓN NUEVA: INTERFAZ DE INICIAR SESIÓN (LOGIN)
+   ========================================================================== */
+.login-container {
+    font-family: Georgia, serif;
+    height: 100vh;
+}
+
+.login-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 420px;
+    width: 100%;
+    background: white;
+}
+
+.login-title {
+    color: #A97C73;
+    font-weight: 700;
+    font-family: Georgia, serif;
+}
+
+.text-magenta-custom {
+    color: #8c0963 !important;
+}
+
+/* Campos encapsulados adaptados al diseño */
+.input-group-custom {
+    background-color: #fffaf1;
+    border: 1px solid #ced4da;
+    border-radius: 50px; /* Igual que .search-group */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 2px 15px;
+    transition: border-color 0.2s ease;
+}
+
+.input-group-custom:focus-within {
+    border-color: #8c0963; /* Borde magenta de la paleta */
+}
+
+.input-group-custom input {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 8px 15px;
+}
+
+/* Corrección de Foco: Remueve por completo la luz exterior */
+.form-control:focus {
+    box-shadow: none !important;
+    background-color: #ffffff;
+}
+
+.input-group-custom i {
+    color: #7c4a67;
+    font-size: 1.1rem;
+}
+
+/* Botón de ingreso con el color de la Navbar */
+.btn-login-custom {
+    background-color: #EC9EC0;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 50px; /* Forma de cápsula */
+    padding: 10px;
+    font-family: Georgia, serif;
+    transition: all 0.3s ease;
+}
+
+.btn-login-custom:hover {
+    background-color: #7c4a67; /* Tono uva */
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECCIÓN NUEVA: DASHBOARD ADMINISTRATIVO (BOAK ADMIN)
+   ========================================================================== */
+:root {
+    --sidebar-width: 260px;
+}
+
+/* Barra Lateral del Panel */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fffaf1; /* Fondo crema suave */
+    border-right: 1px solid #eee;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+    font-family: Georgia, serif;
+}
+
+/* Área de contenido del Panel */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 2.5rem;
+}
+
+/* Enlaces del menú administrativo */
+.sidebar .nav-link {
+    color: #7c4a67 !important; /* Tono uva de tus filtros */
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+}
+
+/* Efecto hover y activo con tu rosa de Navbar en forma de cápsula */
+.sidebar .nav-link:hover, 
+.sidebar .nav-link.active {
+    color: white !important;
+    background-color: #EC9EC0; 
+    border-radius: 50px; 
+}
+
+/* Contenedor de la gráfica de Chart.js */
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 250px;
+    width: 250px;
+}
+
+/* Clases específicas de tipografía y colores para las subtablas */
+.text-magenta-custom {
+    color: #8c0963 !important;
+}
+
+.subtabla-header-libros {
+    color: #A97C73; /* Variación Libros */
+    font-family: Georgia, serif;
+}
+
+.subtabla-header-autores {
+    color: #8c0963; /* Variación Magenta */
+    font-family: Georgia, serif;
+}
+
+/* Adaptabilidad Responsiva para el Panel */
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}

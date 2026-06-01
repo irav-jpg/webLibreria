@@ -1,0 +1,30 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Administrador Principal",
+      "correo": "admin@bajoelmembrillo.com",
+      "contrasena": "admin1234",
+      "rol": "admin",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "Sofía Martínez",
+      "correo": "sofia@ejemplo.com",
+      "contrasena": "cliente123",
+      "rol": "cliente",
+      "telefono": "555-1234",
+      "direccion": "Av. Universidad 1200, CDMX"
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos Gómez",
+      "correo": "carlos@ejemplo.com",
+      "contrasena": "carlos789",
+      "rol": "cliente",
+      "telefono": "555-5678",
+      "direccion": "Calle Querétaro 45, Col. Roma"
+    }
+  ]
+}
