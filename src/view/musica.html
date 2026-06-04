@@ -25,19 +25,77 @@
 
                 <!-- BUSCADOR -->
                 <div class="col px-md-4">
-                    <div class="search-group">
-                        <i class="bi bi-search"></i>
-                        <input type="text" class="form-control" placeholder="Buscar...">
-                    </div>
+                    <div class="search-group position-relative">
+
+    <i class="bi bi-search"></i>
+
+    <input
+        type="text"
+        id="buscador-global"
+        class="form-control"
+        placeholder="Buscar..."
+        autocomplete="off"
+    >
+
+    <div
+        id="resultados-busqueda"
+        class="search-results"
+    ></div>
+
+</div>
                 </div>
 
                 <!-- ICONOS -->
                 <div class="col-auto d-flex align-items-center gap-4">
-                    <a href="#" class="nav-link-custom d-none d-sm-flex">
-                        <i class="bi bi-person-circle"></i>
-                        <span>Iniciar sesión</span>
-                    </a>
-                    <a href="#" class="nav-link-custom position-relative">
+
+    <div class="dropdown" id="menu-usuario">
+
+        <a href="#"
+           class="nav-link-custom dropdown-toggle"
+           data-bs-toggle="dropdown">
+
+            <i class="bi bi-person-circle"></i>
+
+            <span id="texto-usuario">
+                Usuario
+            </span>
+
+        </a>
+
+        <ul class="dropdown-menu">
+
+            <li>
+
+                <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="cerrarSesion()">
+
+                    Cerrar sesión
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <a
+        href="iniciar_sesion.html"
+        id="btn-login"
+        class="nav-link-custom">
+
+        <i class="bi bi-person-circle"></i>
+
+        <span>
+            Iniciar sesión
+        </span>
+
+    </a>
+
+    <a href="carrito.html"
+       class="nav-link-custom position-relative">
                         <i class="bi bi-bag"></i>
                         <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark cart-badge">
                             0
@@ -169,7 +227,11 @@
     </main>
 
     <!-- SCRIPTS -->
-    <script src="../viewModel/musica.js"></script>
+    
+    <script src="../viewModel/auth.js"></script>
+<script src="../viewModel/carrito_utils.js"></script>
+<script src="../viewModel/busqueda_global.js"></script>
+<script src="../viewModel/musica.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

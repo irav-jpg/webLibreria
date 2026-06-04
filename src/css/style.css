@@ -1,107 +1,131 @@
-/* --- Estilos base para el cuerpo (opcional) --- */
 body {
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
 
-/* --- Personalización de la barra lateral de la página --- */
 body::-webkit-scrollbar {
     width: 8px;
 }
+
 body::-webkit-scrollbar-thumb {
     background: #F2DC99;
     border-radius: 10px;
 }
 
-/* Navbar personalizado */
 .navbar-custom {
-            background-color: #EC9EC0; 
-            padding: 0.5rem 0;
-        }
+    background-color: #EC9EC0; 
+    padding: 0.5rem 0;
+}
 
-        /* Logo BOAK */
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.6rem;
-            color: white !important;
-            margin: 0;
-            letter-spacing: 1px;
-            font-family: Georgia, serif;
-        }
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: white !important;
+    margin: 0;
+    letter-spacing: 1px;
+    font-family: Georgia, serif;
+}
 
-        /* Botón Categorías */
-        .btn-categories {
-            color: white;
-            border: none;
-            background: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+.btn-categories {
+    color: white;
+    border: none;
+    background: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-        /* Buscador  */
-        .search-group {
-            background-color: white;
-            border-radius: 50px; /* Forma de cápsula */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 2px 15px;
-        }
+.search-group{
 
-        .search-group input {
-            border: none;
-            box-shadow: none !important;
-            padding: 8px 10px;
-        }
+    width:100%;
+    max-width:450px;
 
-        .search-group i {
-            color: #81178b;
-            font-size: 1.1rem;
-        }
+    position:relative;
 
-        /* Iconos derecha */
-        .nav-link-custom {
-            color: white !important;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            font-family: Georgia, serif;
+    display:flex;
 
-        }
+    align-items:center;
 
-        .nav-link-custom i {
-            font-size: 1.5rem;
-        }
+}
 
-        /* Badge del carrito */
-        .cart-badge {
-            font-size: 0.65rem;
-            padding: 0.35em 0.5em;
-        }
+.search-group input{
 
-/* --- CARRUSELES HORIZONTALES --- */
+    width:100%;
+
+    height:46px;
+
+    border:none !important;
+
+    border-radius:50px;
+
+    padding-left:45px;
+
+    padding-right:15px;
+
+    background:white;
+
+}
+.search-group i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#81178b;
+
+    z-index:2;
+
+}
+.nav-link-custom {
+    color: white !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: Georgia, serif;
+}
+
+.nav-link-custom i {
+    font-size: 1.5rem;
+}
+
+.cart-badge {
+    font-size: 0.65rem;
+    padding: 0.35em 0.5em;
+}
+
 .carousel-netflix {
+    width: 100%;
+    overflow: hidden !important; 
     display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 5px;
-    scroll-behavior: smooth;
-    /* Ocultar barras de desplazamiento */
-    scrollbar-width: none; 
-    -ms-overflow-style: none;  
+    position: relative;
 }
 
 .carousel-netflix::-webkit-scrollbar {
     display: none;
 }
 
-/* --- TARJETAS DE PRODUCTO (CARDS) --- */
+.marquee-track-custom {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; 
+    gap: 20px;
+    padding: 20px 5px;
+    will-change: transform;
+    width: max-content !important; 
+}
+
+.card-item, .ver-mas-card {
+    flex: 0 0 auto !important;
+}
+
 .card-item {
     cursor: pointer;
     background: white;
@@ -109,17 +133,16 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
     min-width: 200px;
     max-width: 200px;
-    flex: 0 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Necesario para la extensión de descripción */
+    position: relative; 
     border: 1px solid #eee;
 }
 
 .card-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;}
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+}
 
-/* --- CONTENEDOR DE IMAGEN Y DESCRIPCIÓN EXTENDIDA --- */
 .card-media {
     position: relative;
     overflow: hidden;
@@ -133,7 +156,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #ffffff;
 }
 
-/* Esta es la "extensión" que muestra solo la descripción */
 .card-description-overlay {
     position: absolute;
     top: 0;
@@ -148,19 +170,16 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     text-align: center;
     font-size: 0.85rem;
-    opacity: 0; /* Invisible por defecto */
+    opacity: 0; 
     transition: opacity 0.3s ease;
     pointer-events: none;
     font-family: Georgia, serif;
-
 }
 
-/* Mostrar la extensión al pasar el cursor */
 .card-item:hover .card-description-overlay {
     opacity: 1;
 }
 
-/* --- INFORMACIÓN DE LA TARJETA (Texto inferior) --- */
 .card-info {
     padding: 10px;
     text-align: center;
@@ -179,157 +198,104 @@ body::-webkit-scrollbar-thumb {
     color: #8c0963 !important;
 }
 
-.section-title{
+.section-title {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 15px;
     padding-left: 5px;
     font-family: Georgia, serif;
-
 }
-.titulo-libros{
+
+.titulo-libros {
     color: #A97C73;
 }
 
-.titulo-musica{
+.titulo-musica {
     color: #e08def;
 }
 
-.titulo-objetos{
+.titulo-objetos {
     color: #93C572;
 }
 
-.section-container{
+.section-container {
     margin-bottom: 40px;
 }
-.ver-mas-card{
+
+.ver-mas-card {
     min-width: 200px;
     max-width: 200px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
     color: #d394f5;
-
     transition: all 0.3s ease;
 }
 
-.ver-mas-card i{
+.ver-mas-card i {
     font-size: 4rem;
     margin-bottom: 12px;
 }
 
-.ver-mas-card span{
+.ver-mas-card span {
     font-weight: 700;
     font-size: 1.4rem;
 }
 
-.ver-mas-card:hover{
+.ver-mas-card:hover {
     transform: scale(1.08);
     color: #7b0e83;
 }
 
-
-
-
-
-
-/* ======================================
-   PÁGINA LIBROS
-====================================== */
-
-/* GRID DE PRODUCTOS */
-
-.productos-grid{
+.productos-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fill, minmax(200px, 1fr));
-
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px;
 }
 
-
-/* SIDEBAR FILTROS */
-
-.filtros-sidebar{
-
+.filtros-sidebar {
     background: white;
-
     padding: 25px;
-
     border-radius: 16px;
-
     height: fit-content;
-
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
     position: sticky;
-
     top: 20px;
 }
 
-
-/* TÍTULOS DE FILTROS */
-
-.filtros-sidebar h6{
-
+.filtros-sidebar h6 {
     font-weight: 700;
-
     color: #7c4a67;
-
     margin-bottom: 10px;
 }
 
-
-/* SELECTS */
-
-.filtros-sidebar .form-select{
-
+.filtros-sidebar .form-select {
     border-radius: 10px;
-
     border: 1px solid #ddd;
-
     padding: 10px;
 }
 
-
-/* RANGE */
-
-.form-range::-webkit-slider-thumb{
-
+.form-range::-webkit-slider-thumb {
     background: #e0007f;
 }
 
-
-/* ESPACIO GENERAL */
-
-main{
+main {
     padding-bottom: 50px;
 }
 
-
-/* RESPONSIVE */
-
-@media(max-width: 991px){
-
-    .filtros-sidebar{
-
+@media(max-width: 991px) {
+    .filtros-sidebar {
         display: none;
     }
-
-    .productos-grid{
-
-        grid-template-columns:
-            repeat(auto-fill, minmax(160px, 1fr));
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
-
 }
-.btn-filtros-mobile{
-    background-color:#f2d185;
+
+.btn-filtros-mobile {
+    background-color: #f2d185;
     color: white;
     border: none;
     font-weight: 600;
@@ -337,39 +303,10 @@ main{
     padding: 10px;
 }
 
-.btn-filtros-mobile:hover{
+.btn-filtros-mobile:hover {
     background-color: #EC9EC0;
 }
 
-
-/* ======================================
-   DISEÑO CARRUSEL
-====================================== */
-/* --- CORRECCIÓN MARQUEE INFINITO (Mantiene el diseño original) --- */
-/* --- CORRECCIÓN DEFINITIVA DE MOVIMIENTO HORIZONTAL --- */
-.carousel-netflix {
-    width: 100%;
-    overflow: hidden !important; /* Esconde lo que se sale de la pantalla */
-    display: flex !important;
-    position: relative;
-}
-
-.marquee-track-custom {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; /* <-- CORREGIDO: Esto evita que se congele la pista */
-    gap: 20px;
-    padding: 20px 5px;
-    will-change: transform;
-    width: max-content !important; /* Permite que la fila se estienda infinitamente a la derecha */
-}
-
-/* Forzar a que las tarjetas mantengan sus 200px originales en la fila */
-.card-item, .ver-mas-card {
-    flex: 0 0 auto !important;
-}
-
-/* --- BOTONES VER MÁS PERSONALIZADOS PARA CADA CATEGORÍA --- */
 .btn-ver-mas {
     font-family: Georgia, serif;
     font-weight: 700;
@@ -383,42 +320,39 @@ main{
     text-decoration: none;
 }
 
-/* Variación Libros (#A97C73) */
 .btn-libros {
     color: #A97C73;
     border: 2px solid #A97C73;
 }
+
 .btn-libros:hover {
     background-color: #A97C73;
     color: white !important;
     transform: translateY(-2px);
 }
 
-/* Variación Música (#e08def) */
 .btn-musica {
     color: #e08def;
     border: 2px solid #e08def;
 }
+
 .btn-musica:hover {
     background-color: #e08def;
     color: white !important;
     transform: translateY(-2px);
 }
 
-/* Variación Objetos (#93C572) */
 .btn-objetos {
     color: #93C572;
     border: 2px solid #93C572;
 }
+
 .btn-objetos:hover {
     background-color: #93C572;
     color: white !important;
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   SECCIÓN NUEVA: INTERFAZ DE INICIAR SESIÓN (LOGIN)
-   ========================================================================== */
 .login-container {
     font-family: Georgia, serif;
     height: 100vh;
@@ -443,11 +377,10 @@ main{
     color: #8c0963 !important;
 }
 
-/* Campos encapsulados adaptados al diseño */
 .input-group-custom {
     background-color: #fffaf1;
     border: 1px solid #ced4da;
-    border-radius: 50px; /* Igual que .search-group */
+    border-radius: 50px; 
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -456,7 +389,7 @@ main{
 }
 
 .input-group-custom:focus-within {
-    border-color: #8c0963; /* Borde magenta de la paleta */
+    border-color: #8c0963; 
 }
 
 .input-group-custom input {
@@ -466,7 +399,6 @@ main{
     padding: 8px 15px;
 }
 
-/* Corrección de Foco: Remueve por completo la luz exterior */
 .form-control:focus {
     box-shadow: none !important;
     background-color: #ffffff;
@@ -477,32 +409,27 @@ main{
     font-size: 1.1rem;
 }
 
-/* Botón de ingreso con el color de la Navbar */
 .btn-login-custom {
     background-color: #EC9EC0;
     color: white;
     border: none;
     font-weight: 600;
-    border-radius: 50px; /* Forma de cápsula */
+    border-radius: 50px; 
     padding: 10px;
     font-family: Georgia, serif;
     transition: all 0.3s ease;
 }
 
 .btn-login-custom:hover {
-    background-color: #7c4a67; /* Tono uva */
+    background-color: #7c4a67; 
     color: white;
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   SECCIÓN NUEVA: DASHBOARD ADMINISTRATIVO (BOAK ADMIN)
-   ========================================================================== */
 :root {
     --sidebar-width: 260px;
 }
 
-/* Barra Lateral del Panel */
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
@@ -510,21 +437,19 @@ main{
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: #fffaf1; /* Fondo crema suave */
+    background-color: #fffaf1; 
     border-right: 1px solid #eee;
     box-shadow: 2px 0 10px rgba(0,0,0,0.02);
     font-family: Georgia, serif;
 }
 
-/* Área de contenido del Panel */
 .main-content {
     margin-left: var(--sidebar-width);
     padding: 2.5rem;
 }
 
-/* Enlaces del menú administrativo */
 .sidebar .nav-link {
-    color: #7c4a67 !important; /* Tono uva de tus filtros */
+    color: #7c4a67 !important; 
     font-weight: 600;
     transition: all 0.2s ease;
     display: flex;
@@ -533,7 +458,6 @@ main{
     padding: 0.6rem 1rem;
 }
 
-/* Efecto hover y activo con tu rosa de Navbar en forma de cápsula */
 .sidebar .nav-link:hover, 
 .sidebar .nav-link.active {
     color: white !important;
@@ -541,7 +465,6 @@ main{
     border-radius: 50px; 
 }
 
-/* Contenedor de la gráfica de Chart.js */
 .chart-container {
     position: relative;
     margin: auto;
@@ -549,22 +472,16 @@ main{
     width: 250px;
 }
 
-/* Clases específicas de tipografía y colores para las subtablas */
-.text-magenta-custom {
-    color: #8c0963 !important;
-}
-
 .subtabla-header-libros {
-    color: #A97C73; /* Variación Libros */
+    color: #A97C73; 
     font-family: Georgia, serif;
 }
 
 .subtabla-header-autores {
-    color: #8c0963; /* Variación Magenta */
+    color: #8c0963; 
     font-family: Georgia, serif;
 }
 
-/* Adaptabilidad Responsiva para el Panel */
 @media (max-width: 992px) {
     .sidebar {
         position: static;
@@ -577,4 +494,251 @@ main{
         margin-left: 0;
         padding: 1.5rem;
     }
+}
+
+.card-aesthetic {
+    background: #ffffff;
+    border: none;
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    padding: 1.5rem;
+}
+
+.card-aesthetic-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: #1e2229;
+}
+
+.aesthetic-chart-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chart-donut-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.chart-custom-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 55%;
+}
+
+.legend-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.9rem;
+}
+
+.legend-marker-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-percentage {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.table-aesthetic th {
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a202c;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.table-aesthetic td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f7fafc;
+}
+
+/* ==========================
+VENTANA EMERGENTE BUSCADOR
+========================== */
+
+/* ==========================
+VENTANA FLOTANTE BUSCADOR
+========================== */
+
+/* ==========================
+BUSCADOR FLOTANTE GLOBAL
+========================== */
+
+.search-results{
+
+position:fixed !important;
+
+/* debajo del navbar */
+top:72px;
+
+/* centrado */
+left:50%;
+
+transform:translateX(-50%);
+
+width:650px;
+
+max-width:90vw;
+
+background:#fff;
+
+border-radius:22px;
+
+box-shadow:
+0 25px 80px rgba(0,0,0,.18);
+
+display:none;
+
+z-index:999999;
+
+max-height:500px;
+
+overflow-y:auto;
+
+padding:10px;
+
+/* evita mover navbar */
+contain:layout;
+
+}
+
+/* título */
+
+.search-results::before{
+
+content:"Buscar productos";
+
+display:block;
+
+padding:12px;
+
+font-weight:700;
+
+color:#8c0963;
+
+border-bottom:1px solid #eee;
+
+margin-bottom:10px;
+
+}
+
+/* filas */
+
+.resultado-item{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 15px;
+
+cursor:pointer;
+
+border-radius:12px;
+
+transition:.2s;
+
+}
+
+.resultado-item:hover{
+
+background:#fff6fc;
+
+}
+
+/* imagen pequeña */
+
+.resultado-item img{
+
+width:42px;
+
+height:42px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+flex-shrink:0;
+
+}
+
+/* ocultar extras */
+
+.resultado-info small,
+.resultado-info p,
+.resultado-info div{
+
+display:none;
+
+}
+
+.resultado-info{
+
+display:flex;
+
+align-items:center;
+
+}
+
+.resultado-info h6{
+
+margin:0;
+
+font-size:.95rem;
+
+font-weight:600;
+
+color:#333;
+
+}
+
+/* scroll bonito */
+
+.search-results::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.search-results::-webkit-scrollbar-thumb{
+
+background:#EC9EC0;
+
+border-radius:10px;
+
+}
+
+/* móvil */
+
+@media(max-width:768px){
+
+.search-results{
+
+top:80px;
+
+width:95vw;
+
+}
+
 }
