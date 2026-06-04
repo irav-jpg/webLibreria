@@ -10,14 +10,49 @@ let albumesOriginales = [];
 ========================= */
 async function cargarAlbumes() {
     try {
-        const respuesta = await fetch('../data/musica.json');
-        const albumes = await respuesta.json();
+
+        const respuesta =
+            await fetch('../data/musica.json');
+
+        const albumes =
+            await respuesta.json();
+
         albumesOriginales = albumes;
-        renderizarAlbumes(albumes);
+
+        const busquedaGlobal =
+            localStorage.getItem(
+                "busquedaGlobal"
+            );
+
+        if (busquedaGlobal) {
+
+            document.getElementById(
+                "buscador-albumes"
+            ).value = busquedaGlobal;
+
+            aplicarFiltros();
+
+            localStorage.removeItem(
+                "busquedaGlobal"
+            );
+
+        } else {
+
+            renderizarAlbumes(albumes);
+
+        }
+
         actualizarContadorCarrito();
+
     } catch(error){
-        console.error("Error cargando álbumes:", error);
+
+        console.error(
+            "Error cargando albumes:",
+            error
+        );
+
     }
+
 }
 
 /* =========================
@@ -94,7 +129,10 @@ document.getElementById("buscador-albumes").addEventListener("input", aplicarFil
 /* =========================
    INICIAR
 ========================= */
-document.addEventListener("DOMContentLoaded", cargarAlbumes);
+document.addEventListener(
+     "DOMContentLoaded",
+    cargarAlbumes
+);
 
 /* =========================
    BUSCADOR NAVBAR

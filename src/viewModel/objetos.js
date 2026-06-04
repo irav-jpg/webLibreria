@@ -8,14 +8,51 @@ let objetosOriginales = [];
    CARGAR OBJETOS
 ========================= */
 async function cargarObjetos() {
-    try {
-        const respuesta = await fetch('../data/objetos.json');
-        const objetos = await respuesta.json();
-        objetosOriginales = objetos;
-        renderizarObjetos(objetos);
+     try {
+
+        const respuesta =
+            await fetch('../data/objetos.json');
+
+        const objetos =
+            await respuesta.json();
+
+        objetosOriginales =
+            objetos;
+
+        const busquedaGlobal =
+            localStorage.getItem(
+                "busquedaGlobal"
+            );
+
+        if (busquedaGlobal) {
+
+            document.getElementById(
+                "buscador-objetos"
+            ).value = busquedaGlobal;
+
+            aplicarFiltros();
+
+            localStorage.removeItem(
+                "busquedaGlobal"
+            );
+
+        } else {
+
+            renderizarObjetos(
+                objetos
+            );
+
+        }
+
         actualizarContadorCarrito();
+
     } catch(error){
-        console.error("Error cargando objetos:", error);
+
+        console.error(
+            "Error cargando objetos:",
+            error
+        );
+
     }
 }
 
@@ -88,7 +125,10 @@ document.getElementById("buscador-objetos").addEventListener("input", aplicarFil
 /* =========================
    INICIAR
 ========================= */
-document.addEventListener("DOMContentLoaded", cargarObjetos);
+document.addEventListener(
+    "DOMContentLoaded",
+    cargarObjetos
+);
 
 /* =========================
    BUSCADOR NAVBAR

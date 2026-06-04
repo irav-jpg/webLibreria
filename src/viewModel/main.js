@@ -246,85 +246,63 @@ $${item.precio}
 BUSCADOR GLOBAL
 ========================= */
 
-let productosGlobales=[];
+let productosGlobales = [];
 
 async function cargarBuscadorGlobal(){
 
-try{
+    try{
 
-const [
-m,
-l,
-o
+        const [
+            m,
+            l,
+            o
+        ] = await Promise.all([
 
-]=await Promise.all([
+            fetch("../data/musica.json"),
+            fetch("../data/libros.json"),
+            fetch("../data/objetos.json")
 
-fetch(
-"../data/musica.json"
-),
+        ]);
 
-fetch(
-"../data/libros.json"
-),
+        const musica =
+            await m.json();
 
-fetch(
-"../data/objetos.json"
-)
+        const libros =
+            await l.json();
 
-]);
+        const objetos =
+            await o.json();
 
-const musica=
-await m.json();
+        productosGlobales = [
 
-const libros=
-await l.json();
+            ...libros.map(x => ({
+                ...x,
+                tipo: "Libro"
+            })),
 
-const objetos=
-await o.json();
+            ...musica.map(x => ({
+                ...x,
+                tipo: "Música"
+            })),
 
-productosGlobales=[
+            ...objetos.map(x => ({
+                ...x,
+                tipo: "Objeto"
+            }))
 
-...libros.map(
-x=>(
-{
-...x,
-tipo:"Libro"
-}
-)
-),
+        ];
 
-...musica.map(
-x=>(
-{
-...x,
-tipo:"Música"
-}
-)
-),
+        iniciarBusqueda();
 
-...objetos.map(
-x=>(
-{
-...x,
-tipo:"Objeto"
-}
-)
-)
+    }
 
-];
+    catch(error){
 
-iniciarBusqueda();
+        console.error(error);
+
+    }
 
 }
-
-catch(e){
-
-console.error(e);
-
-}
-
-}
-
 
 function iniciarBusqueda(){
 
@@ -446,14 +424,31 @@ $${item.precio}
 `;
 
 div.onclick=()=>{
+     localStorage.setItem(
+        "busquedaGlobal",
+        item.titulo
+    );
 
-mostrarDetalles(
-item
-);
+    if(item.tipo === "Libro"){
 
-resultados.style.display=
-"none";
+        window.location.href =
+            "libros.html";
 
+    }
+
+    else if(item.tipo === "Música"){
+
+        window.location.href =
+            "musica.html";
+
+    }
+
+    else if(item.tipo === "Objeto"){
+
+        window.location.href =
+            "objetos.html";
+
+    }
 };
 
 resultados.appendChild(

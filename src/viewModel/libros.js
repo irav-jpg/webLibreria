@@ -9,13 +9,47 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 ========================= */
 async function cargarLibros() {
     try {
-        const respuesta = await fetch('../data/libros.json');
-        const libros = await respuesta.json();
+
+        const respuesta =
+            await fetch('../data/libros.json');
+
+        const libros =
+            await respuesta.json();
+
         librosOriginales = libros;
-        renderizarLibros(libros);
+
+        const busquedaGlobal =
+            localStorage.getItem(
+                "busquedaGlobal"
+            );
+
+        if (busquedaGlobal) {
+
+            document.getElementById(
+                "buscador-libros"
+            ).value = busquedaGlobal;
+
+            aplicarFiltros();
+
+            localStorage.removeItem(
+                "busquedaGlobal"
+            );
+
+        } else {
+
+            renderizarLibros(libros);
+
+        }
+
         actualizarContadorCarrito();
+
     } catch(error){
-        console.error("Error cargando libros:", error);
+
+        console.error(
+            "Error cargando libros:",
+            error
+        );
+
     }
 }
 
@@ -96,7 +130,10 @@ document.getElementById("buscador-libros").addEventListener("input", aplicarFilt
 /* =========================
    INICIAR
 ========================= */
-document.addEventListener("DOMContentLoaded", cargarLibros);
+document.addEventListener(
+    "DOMContentLoaded",
+    cargarLibros
+);
 
 /* =========================
    BUSCADOR NAVBAR

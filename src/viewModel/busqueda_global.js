@@ -77,36 +77,23 @@ function mostrarResultados(texto) {
         resultados
         .map(p => `
 
-<div
-class="resultado-item">
 
-<img
-src="${p.imagen}"
->
+    <div
+        class="resultado-item"
+        onclick="irAProducto('${p.categoria}','${p.titulo}')">
+        <img
+        src="${p.imagen}"
+        >
 
-<div>
+        <div>
 
-<h6>
+        <h6>${p.titulo}</h6>
 
-${p.titulo}
+        <p>${p.categoria}</p>
 
-</h6>
+        </div>
 
-<p>
-
-${p.categoria}
-
-</p>
-
-<p>
-
-$${p.precio}
-
-</p>
-
-</div>
-
-</div>
+    </div>
 
 `)
 
@@ -144,3 +131,25 @@ e.target.value
 });
 
 });
+
+function irAProducto(categoria, titulo){
+localStorage.setItem(
+        "busquedaGlobal",
+        titulo
+    );
+
+    switch(categoria){
+
+        case "Libros":
+            window.location.href = "libros.html";
+            break;
+
+        case "Música":
+            window.location.href = "musica.html";
+            break;
+
+        case "Objetos":
+            window.location.href = "objetos.html";
+            break;
+    }
+}
