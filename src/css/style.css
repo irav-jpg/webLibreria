@@ -1118,3 +1118,11 @@ color:#ffffff;
     background:#5f3d5d;
     color:#ffd7ef;
 }
+
+.dashboard-user{
+    color:#222 !important;
+}
+
+.modo-oscuro .dashboard-user{
+    color:#f8f1f4 !important;
+}
