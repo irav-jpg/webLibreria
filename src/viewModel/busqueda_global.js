@@ -1,4 +1,4 @@
-let productosGlobales = [];
+ productosGlobales = [];
 
 async function cargarProductos() {
 

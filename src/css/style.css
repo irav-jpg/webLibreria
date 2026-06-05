@@ -732,3 +732,113 @@ width:95vw;
 }
 
 }
+/* =========================
+   MODO OSCURO MEMBRILLO
+========================= */
+
+.modo-oscuro{
+    background-color:#2b2330;
+    color:#f8f1f4;
+}
+.modo-oscuro .navbar-custom{
+    background-color:#5f3d5d;
+}
+.modo-oscuro .card-item,
+.modo-oscuro .login-card,
+.modo-oscuro .card,
+.modo-oscuro .filtros-sidebar,
+.modo-oscuro .card-aesthetic{
+    background-color:#3a2f40;
+    color:#f8f1f4;
+    border-color:#5a4a61;
+}
+.modo-oscuro .form-control,
+.modo-oscuro .form-select,
+.modo-oscuro .search-group input{
+    background-color:#4a3d52;
+    color:white;
+    border:1px solid #6b5a73;
+}
+
+.modo-oscuro ::placeholder{
+    color:#d8c8d3;
+}
+
+.modo-oscuro .search-results{
+    background-color:#3a2f40;
+    color:white;
+}
+
+.modo-oscuro .resultado-item:hover{
+    background-color:#56465d;
+}
+
+.modo-oscuro .resultado-info h6{
+    color:white;
+}
+
+.modo-oscuro .search-results::before{
+    color:#f2dc99;
+    border-bottom:1px solid #5a4a61;
+}
+.modo-oscuro .titulo-libros{
+    color:#e6c7b8;
+}
+
+.modo-oscuro .titulo-musica{
+    color:#f0b4ff;
+}
+
+.modo-oscuro .titulo-objetos{
+    color:#b8df9e;
+}
+
+.modo-oscuro .sidebar{
+    background-color:#332936;
+    border-right:1px solid #56465d;
+}
+
+.modo-oscuro .sidebar .nav-link{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .sidebar .nav-link:hover,
+.modo-oscuro .sidebar .nav-link.active{
+    background-color:#EC9EC0;
+    color:white !important;
+}
+
+.modo-oscuro .btn-login-custom{
+    background-color:#EC9EC0;
+}
+
+.modo-oscuro .btn-login-custom:hover{
+    background-color:#e0089c;
+}
+.modo-oscuro::-webkit-scrollbar-thumb{
+    background:#EC9EC0;
+}
+
+.modo-oscuro .card-item h6,
+.modo-oscuro .card-item p,
+.modo-oscuro .card-item .text-muted,
+.modo-oscuro .card-info{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-magenta{
+    color:#ff6fd8 !important;
+    font-weight:700;
+    text-shadow:0 0 8px rgba(255,111,216,.5);
+}
+.btn-agregar{
+    background:#d8b4fe;
+    color:#6b217e;
+    border:none;
+    border-radius:12px;
+}
+
+.btn-agregar:hover{
+    background:#c084fc;
+    color:white;
+}
