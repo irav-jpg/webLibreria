@@ -1,0 +1,1128 @@
+body {
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #F2DC99;
+    border-radius: 10px;
+}
+
+.navbar-custom {
+    background-color: #EC9EC0; 
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: white !important;
+    margin: 0;
+    letter-spacing: 1px;
+    font-family: Georgia, serif;
+}
+
+.btn-categories {
+    color: white;
+    border: none;
+    background: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-group{
+
+    width:100%;
+    max-width:450px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.search-group input{
+
+    width:100%;
+
+    height:46px;
+
+    border:none !important;
+
+    border-radius:50px;
+
+    padding-left:45px;
+
+    padding-right:15px;
+
+    background:white;
+
+}
+.search-group i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#81178b;
+
+    z-index:2;
+
+}
+.nav-link-custom {
+    color: white !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: Georgia, serif;
+}
+
+.nav-link-custom i {
+    font-size: 1.5rem;
+}
+
+.cart-badge {
+    font-size: 0.65rem;
+    padding: 0.35em 0.5em;
+}
+
+.carousel-netflix {
+    width: 100%;
+    overflow: hidden !important; 
+    display: flex !important;
+    position: relative;
+}
+
+.carousel-netflix::-webkit-scrollbar {
+    display: none;
+}
+
+.marquee-track-custom {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; 
+    gap: 20px;
+    padding: 20px 5px;
+    will-change: transform;
+    width: max-content !important; 
+}
+
+.card-item, .ver-mas-card {
+    flex: 0 0 auto !important;
+}
+
+.card-item {
+    cursor: pointer;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    border: 1px solid #eee;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+}
+
+.card-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-item img {
+    width: 100%;
+    aspect-ratio: 1/1; 
+    object-fit: cover;
+    display: block;
+    background-color: #ffffff;
+}
+
+.card-description-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(140, 71, 152, 0.88);    
+    color: white;    
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    font-family: Georgia, serif;
+}
+
+.card-item:hover .card-description-overlay {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-info h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-magenta {
+    color: #8c0963 !important;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    font-family: Georgia, serif;
+}
+
+.titulo-libros {
+    color: #A97C73;
+}
+
+.titulo-musica {
+    color: #e08def;
+}
+
+.titulo-objetos {
+    color: #93C572;
+}
+
+.section-container {
+    margin-bottom: 40px;
+}
+
+.ver-mas-card {
+    min-width: 200px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #d394f5;
+    transition: all 0.3s ease;
+}
+
+.ver-mas-card i {
+    font-size: 4rem;
+    margin-bottom: 12px;
+}
+
+.ver-mas-card span {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.ver-mas-card:hover {
+    transform: scale(1.08);
+    color: #7b0e83;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.filtros-sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.filtros-sidebar h6 {
+    font-weight: 700;
+    color: #7c4a67;
+    margin-bottom: 10px;
+}
+
+.filtros-sidebar .form-select {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: #e0007f;
+}
+
+main {
+    padding-bottom: 50px;
+}
+
+@media(max-width: 991px) {
+    .filtros-sidebar {
+        display: none;
+    }
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+.btn-filtros-mobile {
+    background-color: #f2d185;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn-filtros-mobile:hover {
+    background-color: #EC9EC0;
+}
+
+.btn-ver-mas {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 8px 24px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.btn-libros {
+    color: #A97C73;
+    border: 2px solid #A97C73;
+}
+
+.btn-libros:hover {
+    background-color: #A97C73;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.btn-musica {
+    color: #e08def;
+    border: 2px solid #e08def;
+}
+
+.btn-musica:hover {
+    background-color: #e08def;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.btn-objetos {
+    color: #93C572;
+    border: 2px solid #93C572;
+}
+
+.btn-objetos:hover {
+    background-color: #93C572;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+.login-container {
+    font-family: Georgia, serif;
+    height: 100vh;
+}
+
+.login-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 420px;
+    width: 100%;
+    background: white;
+}
+
+.login-title {
+    color: #A97C73;
+    font-weight: 700;
+    font-family: Georgia, serif;
+}
+
+.text-magenta-custom {
+    color: #8c0963 !important;
+}
+
+.input-group-custom {
+    background-color: #fffaf1;
+    border: 1px solid #ced4da;
+    border-radius: 50px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 2px 15px;
+    transition: border-color 0.2s ease;
+}
+
+.input-group-custom:focus-within {
+    border-color: #8c0963; 
+}
+
+.input-group-custom input {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 8px 15px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    background-color: #ffffff;
+}
+
+.input-group-custom i {
+    color: #7c4a67;
+    font-size: 1.1rem;
+}
+
+.btn-login-custom {
+    background-color: #EC9EC0;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 50px; 
+    padding: 10px;
+    font-family: Georgia, serif;
+    transition: all 0.3s ease;
+}
+
+.btn-login-custom:hover {
+    background-color: #7c4a67; 
+    color: white;
+    transform: translateY(-2px);
+}
+
+:root {
+    --sidebar-width: 260px;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fffaf1; 
+    border-right: 1px solid #eee;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+    font-family: Georgia, serif;
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 2.5rem;
+}
+
+.sidebar .nav-link {
+    color: #7c4a67 !important; 
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+}
+
+.sidebar .nav-link:hover, 
+.sidebar .nav-link.active {
+    color: white !important;
+    background-color: #EC9EC0; 
+    border-radius: 50px; 
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 250px;
+    width: 250px;
+}
+
+.subtabla-header-libros {
+    color: #A97C73; 
+    font-family: Georgia, serif;
+}
+
+.subtabla-header-autores {
+    color: #8c0963; 
+    font-family: Georgia, serif;
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}
+
+.card-aesthetic {
+    background: #ffffff;
+    border: none;
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    padding: 1.5rem;
+}
+
+.card-aesthetic-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: #1e2229;
+}
+
+.aesthetic-chart-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chart-donut-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.chart-custom-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 55%;
+}
+
+.legend-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.9rem;
+}
+
+.legend-marker-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-percentage {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.table-aesthetic th {
+    font-family: 'Segoe UI', sans-serif;
+    color: #1a202c;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.table-aesthetic td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f7fafc;
+}
+
+/* ==========================
+VENTANA EMERGENTE BUSCADOR
+========================== */
+
+/* ==========================
+VENTANA FLOTANTE BUSCADOR
+========================== */
+
+/* ==========================
+BUSCADOR FLOTANTE GLOBAL
+========================== */
+
+.search-results{
+
+position:absolute;
+
+    top:55px;
+
+    left:0;
+
+    width:100%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    display:none;
+
+    z-index:9999;
+
+    max-height:350px;
+
+    overflow-y:auto;
+
+    padding:8px;
+
+}
+
+/* título */
+
+.search-results::before{
+
+content:"Buscar productos";
+
+display:block;
+
+padding:12px;
+
+font-weight:700;
+
+color:#8c0963;
+
+border-bottom:1px solid #eee;
+
+margin-bottom:10px;
+
+}
+
+/* filas */
+
+.resultado-item{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 15px;
+
+cursor:pointer;
+
+border-radius:12px;
+
+transition:.2s;
+
+}
+
+.resultado-item:hover{
+
+background:#fff6fc;
+
+}
+
+/* imagen pequeña */
+
+.resultado-item img{
+
+width:42px;
+
+height:42px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+flex-shrink:0;
+
+}
+
+/* ocultar extras */
+
+.resultado-info small,
+.resultado-info p,
+.resultado-info div{
+
+display:none;
+
+}
+
+.resultado-info{
+
+display:flex;
+
+align-items:center;
+
+}
+
+.resultado-info h6{
+
+margin:0;
+
+font-size:.95rem;
+
+font-weight:600;
+
+color:#333;
+
+}
+
+/* scroll bonito */
+
+.search-results::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.search-results::-webkit-scrollbar-thumb{
+
+background:#EC9EC0;
+
+border-radius:10px;
+
+}
+
+/* móvil */
+
+@media(max-width:768px){
+
+.search-results{
+
+top:80px;
+
+width:95vw;
+
+}
+
+}
+/* =========================
+   MODO OSCURO MEMBRILLO
+========================= */
+
+.modo-oscuro{
+    background-color:#2b2330;
+    color:#f8f1f4;
+}
+.modo-oscuro .navbar-custom{
+    background-color:#5f3d5d;
+}
+.modo-oscuro .card-item,
+.modo-oscuro .login-card,
+.modo-oscuro .card,
+.modo-oscuro .filtros-sidebar,
+.modo-oscuro .card-aesthetic{
+    background-color:#3a2f40;
+    color:#f8f1f4;
+    border-color:#5a4a61;
+}
+.modo-oscuro .form-control,
+.modo-oscuro .form-select,
+.modo-oscuro .search-group input{
+    background-color:#4a3d52;
+    color:white;
+    border:1px solid #6b5a73;
+}
+
+.modo-oscuro ::placeholder{
+    color:#d8c8d3;
+}
+
+.modo-oscuro .search-results{
+    background-color:#3a2f40;
+    color:white;
+}
+
+.modo-oscuro .resultado-item:hover{
+    background-color:#56465d;
+}
+
+.modo-oscuro .resultado-info h6{
+    color:white;
+}
+
+.modo-oscuro .search-results::before{
+    color:#f2dc99;
+    border-bottom:1px solid #5a4a61;
+}
+.modo-oscuro .titulo-libros{
+    color:#e6c7b8;
+}
+
+.modo-oscuro .titulo-musica{
+    color:#f0b4ff;
+}
+
+.modo-oscuro .titulo-objetos{
+    color:#b8df9e;
+}
+
+.modo-oscuro .sidebar{
+    background-color:#332936;
+    border-right:1px solid #56465d;
+}
+
+.modo-oscuro .sidebar .nav-link{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .sidebar .nav-link:hover,
+.modo-oscuro .sidebar .nav-link.active{
+    background-color:#EC9EC0;
+    color:white !important;
+}
+
+.modo-oscuro .btn-login-custom{
+    background-color:#EC9EC0;
+}
+
+.modo-oscuro .btn-login-custom:hover{
+    background-color:#e0089c;
+}
+.modo-oscuro::-webkit-scrollbar-thumb{
+    background:#EC9EC0;
+}
+
+.modo-oscuro .card-item h6,
+.modo-oscuro .card-item p,
+.modo-oscuro .card-item .text-muted,
+.modo-oscuro .card-info{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-magenta{
+    color:#ff6fd8 !important;
+    font-weight:700;
+    text-shadow:0 0 8px rgba(255,111,216,.5);
+}
+.btn-agregar{
+    background:#d8b4fe;
+    color:#6b217e;
+    border:none;
+    border-radius:12px;
+}
+
+.btn-agregar:hover{
+    background:#c084fc;
+    color:white;
+}
+
+.modo-oscuro.login-container{
+    background-color:#2b2330 !important;
+}
+
+.modo-oscuro .login-card{
+    background:#3a2f40 !important;
+    color:#f8f1f4 !important;
+    border-color:#5a4a61 !important;
+}
+
+.modo-oscuro .text-dark{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .login-title{
+    color:#f2dc99 !important;
+}
+
+.modo-oscuro label{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .text-muted{
+    color:#d9c9d4 !important;
+}
+
+.modo-oscuro a{
+    color:#f2dc99 !important;
+}
+
+.modo-oscuro .input-group-custom{
+    background:#4a3d52 !important;
+    border-color:#6b5a73 !important;
+}
+
+.modo-oscuro .input-group-custom input{
+    color:white !important;
+}
+
+.modo-oscuro .input-group-custom input::placeholder{
+    color:#cdbfd0 !important;
+}
+
+.modo-oscuro .input-group-custom i{
+    color:#EC9EC0 !important;
+}
+
+.modo-oscuro .main-content{
+    color:#f8f1f4;
+}
+
+.modo-oscuro .text-dark,
+.modo-oscuro h3,
+.modo-oscuro h4,
+.modo-oscuro h5,
+.modo-oscuro h6,
+.modo-oscuro strong{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary,
+.modo-oscuro p{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro .table{
+    color:white !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    border-color:#56465d;
+}
+
+.modo-oscuro .table-hover tbody tr:hover{
+    background:#4a3d52;
+}
+
+.modo-oscuro .badge{
+    color:white !important;
+}
+
+.modo-oscuro .dropdown-menu{
+    background:#3a2f40;
+}
+
+.modo-oscuro .dropdown-item{
+    color:white;
+}
+
+.modo-oscuro .dropdown-item:hover{
+    background:#56465d;
+}
+
+.modo-oscuro hr{
+    color:#56465d !important;
+}
+
+.modo-oscuro canvas{
+    filter:brightness(.95);
+}
+
+.dashboard-logo{
+    color:#212529;
+}
+
+.modo-oscuro .dashboard-logo{
+    color:white;
+}
+
+.modo-oscuro{
+    background:#2b2330;
+    color:#f8f1f4;
+}
+
+.modo-oscuro .main-content{
+    background:#2b2330;
+    color:#f8f1f4;
+}
+
+.modo-oscuro .card-aesthetic{
+    background:#3a2f40;
+    color:white;
+}
+
+.modo-oscuro .text-dark,
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary,
+.modo-oscuro h1,
+.modo-oscuro h2,
+.modo-oscuro h3,
+.modo-oscuro h4,
+.modo-oscuro h5,
+.modo-oscuro h6,
+.modo-oscuro p,
+.modo-oscuro td,
+.modo-oscuro th,
+.modo-oscuro span,
+.modo-oscuro strong{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .table{
+    color:white !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    background:#3a2f40 !important;
+    border-color:#56465d !important;
+}
+
+.modo-oscuro .table-hover tbody tr:hover{
+    background:#4b3c54 !important;
+}
+
+.modo-oscuro .table-aesthetic th{
+    color:#ffd9ec !important;
+}
+
+.modo-oscuro .badge{
+    color:white !important;
+}
+
+.modo-oscuro .dropdown-menu{
+    background:#3a2f40;
+}
+
+.modo-oscuro .dropdown-item{
+    color:white;
+}
+
+.modo-oscuro .dropdown-item:hover{
+    background:#56465d;
+}
+
+.modo-oscuro .sidebar{
+    background:#332936;
+}
+
+.modo-oscuro .sidebar span,
+.modo-oscuro .sidebar strong{
+    color:white !important;
+}
+
+.modo-oscuro .legend-details,
+.modo-oscuro .legend-marker-text,
+.modo-oscuro .legend-percentage{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro small{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro hr{
+    border-color:#56465d;
+}
+
+.dashboard-total{
+color:#222;
+}
+
+.modo-oscuro .dashboard-total{
+color:#ffffff;
+}
+
+.badge-exhibicion{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:.35rem .9rem;
+    border-radius:999px;
+    font-weight:700;
+}
+
+.modo-oscuro .badge-exhibicion{
+    background:#5f3d5d;
+    color:#ffd7ef;
+}
+
+.modo-oscuro .table{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .text-dark{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro .chart-donut-wrapper .text-dark{
+    color:#ffffff !important;
+}
+
+.badge-seccion{
+    background-color:#e8f5e9;
+    color:#2e7d32;
+    font-weight:600;
+}
+
+.modo-oscuro .badge-seccion{
+    background-color:#5f3d5d;
+    color:#ffd7ef;
+}
+
+.badge-libros{
+    background:#fff3e8;
+    color:#A97C73;
+}
+
+.badge-musica{
+    background:#fdeeff;
+    color:#8c0963;
+}
+
+.badge-objetos{
+    background:#eef8e8;
+    color:#6a9f52;
+}
+
+.modo-oscuro .badge-libros,
+.modo-oscuro .badge-musica,
+.modo-oscuro .badge-objetos{
+    background:#5f3d5d;
+    color:#ffd7ef;
+}
+
+.dashboard-user{
+    color:#222 !important;
+}
+
+.modo-oscuro .dashboard-user{
+    color:#f8f1f4 !important;
+}
