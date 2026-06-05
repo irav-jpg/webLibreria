@@ -1,13 +1,6 @@
-/* =========================
-   VARIABLES GLOBALES
-========================= */
-let albumesOriginales = [];
-// Inicializamos el carrito leyendo el localStorage
-//let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-/* =========================
-   CARGAR ÁLBUMES
-========================= */
+let albumesOriginales = [];
+
 async function cargarAlbumes() {
     try {
 
@@ -55,14 +48,6 @@ async function cargarAlbumes() {
 
 }
 
-/* =========================
-   LÓGICA DEL CARRITO
-========================= */
-
-
-/* =========================
-   RENDERIZAR ÁLBUMES
-========================= */
 function renderizarAlbumes(lista){
     const contenedor = document.getElementById("contenedor-albumes-grid");
     if (!contenedor) return;
@@ -95,9 +80,6 @@ function renderizarAlbumes(lista){
     contenedor.innerHTML = html;
 }
 
-/* =========================
-   FILTRAR ÁLBUMES
-========================= */
 function aplicarFiltros(){
     const genero = document.getElementById("filtro-genero").value || document.getElementById("filtro-genero-mobile").value;
     const precio = Number(document.getElementById("filtro-precio").value);
@@ -113,9 +95,6 @@ function aplicarFiltros(){
     renderizarAlbumes(filtrados);
 }
 
-/* =========================
-   EVENTOS
-========================= */
 document.getElementById("filtro-genero").addEventListener("change", function(){ document.getElementById("filtro-genero-mobile").value = this.value; aplicarFiltros(); });
 document.getElementById("filtro-precio").addEventListener("input", function(){ document.getElementById("precio-valor").textContent = this.value; document.getElementById("filtro-precio-mobile").value = this.value; document.getElementById("precio-valor-mobile").textContent = this.value; aplicarFiltros(); });
 document.getElementById("filtro-anio").addEventListener("input", function(){ document.getElementById("anio-valor").textContent = this.value; document.getElementById("filtro-anio-mobile").value = this.value; document.getElementById("anio-valor-mobile").textContent = this.value; aplicarFiltros(); });
@@ -126,17 +105,10 @@ document.getElementById("filtro-anio-mobile").addEventListener("input", function
 
 document.getElementById("buscador-albumes").addEventListener("input", aplicarFiltros);
 
-/* =========================
-   INICIAR
-========================= */
 document.addEventListener(
      "DOMContentLoaded",
     cargarAlbumes
 );
-
-/* =========================
-   BUSCADOR NAVBAR
-========================= */
 
 const buscadorNavbar = document.getElementById("buscador-navbar");
 

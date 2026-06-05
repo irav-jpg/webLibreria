@@ -21,7 +21,7 @@
     <aside class="sidebar d-flex flex-column p-3">
         <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none px-1">
             <i class="bi bi-book-half fs-3 text-magenta-custom me-2 pt-1 align-self-start"></i>
-            <span class="fs-5 fw-bold text-dark" style="letter-spacing: 0.5px; line-height: 1.2;">Bajo el Membrillo</span>
+            <span class="fs-5 fw-bold dashboard-logo" style="letter-spacing: 0.5px; line-height: 1.2;">Bajo el Membrillo</span>
         </a>
         <hr class="text-muted my-2">
         <ul class="nav nav-pills flex-column mb-auto gap-1">
@@ -31,6 +31,12 @@
             <li><a href="dashboard_musica.html" class="nav-link active" aria-current="page"><i class="bi bi-music-note-beamed"></i> Música</a></li>
             
         </ul>
+        <div class="px-2 mt-auto mb-3">
+            <button id="btn-tema"
+                class="btn btn-login-custom w-100">
+                🌙 Modo oscuro
+            </button>
+        </div>
         <hr class="text-muted my-2">
         <div class="dropdown px-2">
             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +56,7 @@
                 <p class="text-muted small mb-0">Análisis detallado basado en el catálogo actual de la discografía</p>
             </div>
             <div class="text-end">
-                <span class="badge bg-success-subtle text-success p-2 rounded-pill">Sección: Música</span>
+                <span class="badge badge-seccion badge-musica">Sección: Música</span>
             </div>
         </header>
 
@@ -62,7 +68,7 @@
                         <div class="chart-donut-wrapper">
                             <canvas id="aestheticDonutChart" style="position: relative; z-index: 2;"></canvas>
                             <div class="position-absolute top-50 start-50 translate-middle text-center" style="pointer-events: none; margin-top: -2px; z-index: 1;">
-                                <span class="fs-4 fw-bold text-dark d-block" style="font-family: Georgia, serif; line-height: 1;">2,000</span>
+                                <span class="fs-4 fw-bold dashboard-total d-block" style="font-family: Georgia, serif; line-height: 1;">2,000</span>
                                 <span class="text-muted fw-semibold text-uppercase" style="font-size: 0.55rem; letter-spacing: 0.5px;">Vendidos</span>
                             </div>
                         </div>
@@ -197,13 +203,39 @@
                             datasets: [{
                                 data: datosGrafica.map(d => d.porcentaje),
                                 backgroundColor: datosGrafica.map(d => d.color),
-                                borderWidth: 4, borderColor: '#ffffff', borderRadius: 10
+                                borderWidth: 0,
+                                borderColor: 'transparent',
+                                borderRadius: 10
                             }]
                         },
                         options: { 
                             responsive: true, maintainAspectRatio: false, cutout: '72%', 
-                            plugins: { 
-                                legend: { display: false },
+                            plugins:{
+                                legend:{
+                                display:false,
+                                labels:{
+                                color:
+                                document.body.classList.contains("modo-oscuro")
+                                ? "#ffffff"
+                                : "#333"
+                                }
+                                },
+                                tooltip:{
+                                backgroundColor:
+                                document.body.classList.contains("modo-oscuro")
+                                ? "#3a2f40"
+                                : "#fff",
+
+                                titleColor:
+                                document.body.classList.contains("modo-oscuro")
+                                ? "#fff"
+                                : "#111",
+
+                                bodyColor:
+                                document.body.classList.contains("modo-oscuro")
+                                ? "#fff"
+                                : "#333"
+                                },
                                 tooltip: { 
                                     callbacks: { 
                                         title: (items) => 'Género: ' + items[0].label,
@@ -226,12 +258,14 @@
                             <td class="fw-bold text-dark">${m.titulo}</td>
                             <td><span class="badge" style="color: #333; background-color: ${colorHex}50; padding: 0.4em 0.8em; border-radius: 8px; font-weight: 600;">${cat}</span></td>
                             <td class="text-secondary">${m.autor}</td>
-                            <td class="text-center"><span class="fw-bold px-3 py-1 rounded-pill" style="background-color: #e8f5e9; color: #2e7d32;">${Math.floor(Math.random()*10)+1}</span></td>
+                            <td class="text-center">
+                                <span class="badge-exhibicion">${Math.floor(Math.random()*10)+1}</span></td>
                             <td class="text-muted"><i class="bi bi-geo-alt me-2" style="color: #d9534f;"></i>${obtenerUbicacionMusica(cat)}</td>
                         </tr>`;
                     });
                 });
         });
     </script>
+    <script src="../../viewModel/tema.js"></script>
 </body>
 </html>

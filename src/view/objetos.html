@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bajo el Membrillo</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet"
-          href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-custom shadow-sm">
 
         <div class="container-fluid px-lg-5">
 
             <div class="row w-100 align-items-center g-0">
 
-                <!-- LOGO -->
                 <div class="col-auto d-flex align-items-center">
 
-                    <a class="navbar-brand me-4"
-                       href="index.html">
+                    <a class="navbar-brand me-4" href="index.html">
 
                         Bajo el Membrillo
 
@@ -45,83 +35,65 @@
 
                 </div>
 
-                <!-- BUSCADOR -->
                 <div class="col px-md-4">
 
                     <div class="search-group position-relative">
 
-    <i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
 
-    <input
-        type="text"
-        id="buscador-global"
-        class="form-control"
-        placeholder="Buscar..."
-        autocomplete="off"
-    >
+                        <input type="text" id="buscador-global" class="form-control" placeholder="Buscar..."
+                            autocomplete="off">
 
-    <div
-        id="resultados-busqueda"
-        class="search-results"
-    ></div>
+                        <div id="resultados-busqueda" class="search-results"></div>
 
-</div>
+                    </div>
 
                 </div>
 
-                <!-- ICONOS -->
                 <div class="col-auto d-flex align-items-center gap-4">
 
-    <div class="dropdown" id="menu-usuario">
+                    <div class="dropdown" id="menu-usuario">
 
-        <a href="#"
-           class="nav-link-custom dropdown-toggle"
-           data-bs-toggle="dropdown">
+                        <a href="#" class="nav-link-custom dropdown-toggle" data-bs-toggle="dropdown">
 
-            <i class="bi bi-person-circle"></i>
+                            <i class="bi bi-person-circle"></i>
 
-            <span id="texto-usuario">
-                Usuario
-            </span>
+                            <span id="texto-usuario">
+                                Usuario
+                            </span>
 
-        </a>
+                        </a>
 
-        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
 
-            <li>
+                            <li>
 
-                <a
-                    class="dropdown-item"
-                    href="#"
-                    onclick="cerrarSesion()">
+                                <a class="dropdown-item" href="#" onclick="cerrarSesion()">
 
-                    Cerrar sesión
+                                    Cerrar sesión
 
-                </a>
+                                </a>
 
-            </li>
+                            </li>
 
-        </ul>
+                        </ul>
 
-    </div>
+                    </div>
 
-    <a
-        href="iniciar_sesion.html"
-        id="btn-login"
-        class="nav-link-custom">
+                    <a href="iniciar_sesion.html" id="btn-login" class="nav-link-custom">
 
-        <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle"></i>
 
-        <span>
-            Iniciar sesión
-        </span>
+                        <span>
+                            Iniciar sesión
+                        </span>
 
-    </a>
+                    </a>
 
-    <a href="carrito.html"
-       class="nav-link-custom position-relative">
+                    <a href="carrito.html" class="nav-link-custom position-relative">
                         <i class="bi bi-bag"></i>
-                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark cart-badge">
+                        <span
+                            class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark cart-badge">
                             0
                         </span>
                     </a>
@@ -134,46 +106,31 @@
     </nav>
 
 
-    <!-- CONTENIDO -->
     <main class="container-fluid mt-4">
 
         <div class="row">
 
-            <!-- SIDEBAR FILTROS -->
             <aside class="col-lg-3 filtros-sidebar">
 
                 <h4 class="mb-4">
                     Filtros
                 </h4>
 
-                <!-- BUSCADOR -->
                 <div class="mb-4">
 
-                    <input
-                        type="text"
-                        id="buscador-objetos"
-                        class="form-control"
-                        placeholder="Buscar objeto..."
-                    >
+                    <input type="text" id="buscador-objetos" class="form-control" placeholder="Buscar objeto...">
 
                 </div>
 
-                <!-- CATEGORÍA -->
                 <div class="mb-4">
 
-                    <label
-                        for="filtro-categoria"
-                        class="form-label h6"
-                    >
+                    <label for="filtro-categoria" class="form-label h6">
 
                         Categoría
 
                     </label>
 
-                    <select
-                        id="filtro-categoria"
-                        class="form-select"
-                    >
+                    <select id="filtro-categoria" class="form-select">
 
                         <option value="">
                             Todas
@@ -203,26 +160,15 @@
 
                 </div>
 
-                <!-- PRECIO -->
                 <div class="mb-4">
 
-                    <label
-                        for="filtro-precio"
-                        class="form-label h6"
-                    >
+                    <label for="filtro-precio" class="form-label h6">
 
                         Precio máximo
 
                     </label>
 
-                    <input
-                        type="range"
-                        id="filtro-precio"
-                        min="50"
-                        max="500"
-                        value="500"
-                        class="form-range"
-                    >
+                    <input type="range" id="filtro-precio" min="50" max="500" value="500" class="form-range">
 
                     <p class="mt-2">
 
@@ -238,18 +184,12 @@
             </aside>
 
 
-            <!-- CONTENIDO CENTRAL -->
             <section class="col-lg-9">
 
-                <!-- FILTROS MOBILE -->
                 <div class="d-lg-none mb-4">
 
-                    <button
-                        class="btn w-100 btn-filtros-mobile"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#filtrosMobile"
-                    >
+                    <button class="btn w-100 btn-filtros-mobile" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#filtrosMobile">
 
                         <i class="bi bi-sliders"></i>
 
@@ -257,29 +197,19 @@
 
                     </button>
 
-                    <div
-                        class="collapse mt-3"
-                        id="filtrosMobile"
-                    >
+                    <div class="collapse mt-3" id="filtrosMobile">
 
                         <div class="card card-body">
 
-                            <!-- CATEGORÍA MOBILE -->
                             <div class="mb-3">
 
-                                <label
-                                    for="filtro-categoria-mobile"
-                                    class="form-label h6"
-                                >
+                                <label for="filtro-categoria-mobile" class="form-label h6">
 
                                     Categoría
 
                                 </label>
 
-                                <select
-                                    id="filtro-categoria-mobile"
-                                    class="form-select"
-                                >
+                                <select id="filtro-categoria-mobile" class="form-select">
 
                                     <option value="">
                                         Todas
@@ -309,26 +239,16 @@
 
                             </div>
 
-                            <!-- PRECIO MOBILE -->
                             <div>
 
-                                <label
-                                    for="filtro-precio-mobile"
-                                    class="form-label h6"
-                                >
+                                <label for="filtro-precio-mobile" class="form-label h6">
 
                                     Precio máximo
 
                                 </label>
 
-                                <input
-                                    type="range"
-                                    id="filtro-precio-mobile"
-                                    min="50"
-                                    max="500"
-                                    value="500"
-                                    class="form-range"
-                                >
+                                <input type="range" id="filtro-precio-mobile" min="50" max="500" value="500"
+                                    class="form-range">
 
                                 <p class="mt-2">
 
@@ -348,17 +268,13 @@
                 </div>
 
 
-                <!-- PRODUCTOS -->
                 <h2 class="mb-4 titulo-objetos">
 
                     Todos los objetos
 
                 </h2>
 
-                <div
-                    id="contenedor-objetos-grid"
-                    class="productos-grid"
-                >
+                <div id="contenedor-objetos-grid" class="productos-grid">
 
                 </div>
 
@@ -369,16 +285,15 @@
     </main>
 
 
-    <!-- SCRIPTS -->
-    
-    <script src="../viewModel/auth.js"></script>
-<script src="../viewModel/carrito_utils.js"></script>
-<script src="../viewModel/busqueda_global.js"></script>
-<script src="../viewModel/objetos.js"></script>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <script src="../viewModel/auth.js"></script>
+    <script src="../viewModel/carrito_utils.js"></script>
+    <script src="../viewModel/busqueda_global.js"></script>
+    <script src="../viewModel/objetos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
     <script src="../viewModel/tema.js"></script>
 </body>
+
 </html>

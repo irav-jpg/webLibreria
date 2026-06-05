@@ -1,5 +1,3 @@
-// viewModel/auth.js
-
 function cerrarSesion() {
     localStorage.removeItem('usuarioNombre');
     localStorage.removeItem('usuarioRol');
@@ -15,16 +13,15 @@ function verificarUsuario() {
     if (!menuUsuario || !btnLogin) return;
 
     if (nombre) {
-        // Usuario logueado
+        
         menuUsuario.style.display = 'block'; 
         btnLogin.style.display = 'none';    
         if (textoUsuario) textoUsuario.textContent = nombre;
     } else {
-        // Invitado
+        
         menuUsuario.style.display = 'none'; 
         btnLogin.style.display = 'block';   
     }
 }
 
-// Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', verificarUsuario);

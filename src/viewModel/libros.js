@@ -1,12 +1,7 @@
-/* =========================
-   VARIABLES GLOBALES
-========================= */
+
 let librosOriginales = [];
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-/* =========================
-   CARGAR LIBROS
-========================= */
 async function cargarLibros() {
     try {
 
@@ -53,14 +48,6 @@ async function cargarLibros() {
     }
 }
 
-/* =========================
-   LÓGICA CARRITO
-========================= */
-
-
-/* =========================
-   RENDERIZAR LIBROS (ESTILO AESTHETIC)
-========================= */
 function renderizarLibros(lista){
     const contenedor = document.getElementById("contenedor-libros-grid");
     if (!contenedor) return;
@@ -93,9 +80,6 @@ function renderizarLibros(lista){
     contenedor.innerHTML = html;
 }
 
-/* =========================
-   FILTRAR LIBROS Y EVENTOS
-========================= */
 function aplicarFiltros(){
     const categoria = document.getElementById("filtro-categoria").value || document.getElementById("filtro-categoria-mobile").value;
     const editorial = document.getElementById("filtro-editorial").value || document.getElementById("filtro-editorial-mobile").value;
@@ -114,7 +98,6 @@ function aplicarFiltros(){
     renderizarLibros(filtrados);
 }
 
-// [Mantén tus event listeners aquí...]
 document.getElementById("filtro-categoria").addEventListener("change", function(){ document.getElementById("filtro-categoria-mobile").value = this.value; aplicarFiltros(); });
 document.getElementById("filtro-editorial").addEventListener("change", function(){ document.getElementById("filtro-editorial-mobile").value = this.value; aplicarFiltros(); });
 document.getElementById("filtro-idioma").addEventListener("change", function(){ document.getElementById("filtro-idioma-mobile").value = this.value; aplicarFiltros(); });
@@ -127,17 +110,10 @@ document.getElementById("filtro-precio-mobile").addEventListener("input", functi
 
 document.getElementById("buscador-libros").addEventListener("input", aplicarFiltros);
 
-/* =========================
-   INICIAR
-========================= */
 document.addEventListener(
     "DOMContentLoaded",
     cargarLibros
 );
-
-/* =========================
-   BUSCADOR NAVBAR
-========================= */
 
 const buscadorNavbar = document.getElementById("buscador-navbar");
 

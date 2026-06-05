@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let total = 0;
 
     carrito.forEach(item => {
-        // Aseguramos que precio y cantidad sean números
         const precio = Number(item.precio) || 0;
         const cantidad = Number(item.cantidad) || 0;
         total += (precio * cantidad);

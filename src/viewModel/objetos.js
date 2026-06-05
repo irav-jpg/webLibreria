@@ -1,12 +1,6 @@
-/* =========================
-   VARIABLES GLOBALES
-========================= */
-let objetosOriginales = [];
-//let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-/* =========================
-   CARGAR OBJETOS
-========================= */
+let objetosOriginales = [];
+
 async function cargarObjetos() {
      try {
 
@@ -56,14 +50,6 @@ async function cargarObjetos() {
     }
 }
 
-/* =========================
-   LÓGICA CARRITO
-========================= */
-
-
-/* =========================
-   RENDERIZAR OBJETOS (ESTILO AESTHETIC)
-========================= */
 function renderizarObjetos(lista){
     const contenedor = document.getElementById("contenedor-objetos-grid");
     if (!contenedor) return;
@@ -95,9 +81,6 @@ function renderizarObjetos(lista){
     contenedor.innerHTML = html;
 }
 
-/* =========================
-   FILTRAR OBJETOS
-========================= */
 function aplicarFiltros(){
     const categoria = document.getElementById("filtro-categoria").value || document.getElementById("filtro-categoria-mobile").value;
     const precio = Number(document.getElementById("filtro-precio").value);
@@ -111,9 +94,6 @@ function aplicarFiltros(){
     renderizarObjetos(filtrados);
 }
 
-/* =========================
-   EVENTOS
-========================= */
 document.getElementById("filtro-categoria").addEventListener("change", function(){ document.getElementById("filtro-categoria-mobile").value = this.value; aplicarFiltros(); });
 document.getElementById("filtro-precio").addEventListener("input", function(){ document.getElementById("precio-valor").textContent = this.value; document.getElementById("filtro-precio-mobile").value = this.value; document.getElementById("precio-valor-mobile").textContent = this.value; aplicarFiltros(); });
 
@@ -122,17 +102,10 @@ document.getElementById("filtro-precio-mobile").addEventListener("input", functi
 
 document.getElementById("buscador-objetos").addEventListener("input", aplicarFiltros);
 
-/* =========================
-   INICIAR
-========================= */
 document.addEventListener(
     "DOMContentLoaded",
     cargarObjetos
 );
-
-/* =========================
-   BUSCADOR NAVBAR
-========================= */
 
 const buscadorNavbar = document.getElementById("buscador-navbar");
 

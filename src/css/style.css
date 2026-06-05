@@ -842,3 +842,279 @@ width:95vw;
     background:#c084fc;
     color:white;
 }
+
+.modo-oscuro.login-container{
+    background-color:#2b2330 !important;
+}
+
+.modo-oscuro .login-card{
+    background:#3a2f40 !important;
+    color:#f8f1f4 !important;
+    border-color:#5a4a61 !important;
+}
+
+.modo-oscuro .text-dark{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .login-title{
+    color:#f2dc99 !important;
+}
+
+.modo-oscuro label{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .text-muted{
+    color:#d9c9d4 !important;
+}
+
+.modo-oscuro a{
+    color:#f2dc99 !important;
+}
+
+.modo-oscuro .input-group-custom{
+    background:#4a3d52 !important;
+    border-color:#6b5a73 !important;
+}
+
+.modo-oscuro .input-group-custom input{
+    color:white !important;
+}
+
+.modo-oscuro .input-group-custom input::placeholder{
+    color:#cdbfd0 !important;
+}
+
+.modo-oscuro .input-group-custom i{
+    color:#EC9EC0 !important;
+}
+
+.modo-oscuro .main-content{
+    color:#f8f1f4;
+}
+
+.modo-oscuro .text-dark,
+.modo-oscuro h3,
+.modo-oscuro h4,
+.modo-oscuro h5,
+.modo-oscuro h6,
+.modo-oscuro strong{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary,
+.modo-oscuro p{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro .table{
+    color:white !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    border-color:#56465d;
+}
+
+.modo-oscuro .table-hover tbody tr:hover{
+    background:#4a3d52;
+}
+
+.modo-oscuro .badge{
+    color:white !important;
+}
+
+.modo-oscuro .dropdown-menu{
+    background:#3a2f40;
+}
+
+.modo-oscuro .dropdown-item{
+    color:white;
+}
+
+.modo-oscuro .dropdown-item:hover{
+    background:#56465d;
+}
+
+.modo-oscuro hr{
+    color:#56465d !important;
+}
+
+.modo-oscuro canvas{
+    filter:brightness(.95);
+}
+
+.dashboard-logo{
+    color:#212529;
+}
+
+.modo-oscuro .dashboard-logo{
+    color:white;
+}
+
+.modo-oscuro{
+    background:#2b2330;
+    color:#f8f1f4;
+}
+
+.modo-oscuro .main-content{
+    background:#2b2330;
+    color:#f8f1f4;
+}
+
+.modo-oscuro .card-aesthetic{
+    background:#3a2f40;
+    color:white;
+}
+
+.modo-oscuro .text-dark,
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary,
+.modo-oscuro h1,
+.modo-oscuro h2,
+.modo-oscuro h3,
+.modo-oscuro h4,
+.modo-oscuro h5,
+.modo-oscuro h6,
+.modo-oscuro p,
+.modo-oscuro td,
+.modo-oscuro th,
+.modo-oscuro span,
+.modo-oscuro strong{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .table{
+    color:white !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    background:#3a2f40 !important;
+    border-color:#56465d !important;
+}
+
+.modo-oscuro .table-hover tbody tr:hover{
+    background:#4b3c54 !important;
+}
+
+.modo-oscuro .table-aesthetic th{
+    color:#ffd9ec !important;
+}
+
+.modo-oscuro .badge{
+    color:white !important;
+}
+
+.modo-oscuro .dropdown-menu{
+    background:#3a2f40;
+}
+
+.modo-oscuro .dropdown-item{
+    color:white;
+}
+
+.modo-oscuro .dropdown-item:hover{
+    background:#56465d;
+}
+
+.modo-oscuro .sidebar{
+    background:#332936;
+}
+
+.modo-oscuro .sidebar span,
+.modo-oscuro .sidebar strong{
+    color:white !important;
+}
+
+.modo-oscuro .legend-details,
+.modo-oscuro .legend-marker-text,
+.modo-oscuro .legend-percentage{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro small{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro hr{
+    border-color:#56465d;
+}
+
+.dashboard-total{
+color:#222;
+}
+
+.modo-oscuro .dashboard-total{
+color:#ffffff;
+}
+
+.badge-exhibicion{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:.35rem .9rem;
+    border-radius:999px;
+    font-weight:700;
+}
+
+.modo-oscuro .badge-exhibicion{
+    background:#5f3d5d;
+    color:#ffd7ef;
+}
+
+.modo-oscuro .table{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .table td,
+.modo-oscuro .table th{
+    color:#f8f1f4 !important;
+}
+
+.modo-oscuro .text-dark{
+    color:#ffffff !important;
+}
+
+.modo-oscuro .text-muted,
+.modo-oscuro .text-secondary{
+    color:#d8c8d3 !important;
+}
+
+.modo-oscuro .chart-donut-wrapper .text-dark{
+    color:#ffffff !important;
+}
+
+.badge-seccion{
+    background-color:#e8f5e9;
+    color:#2e7d32;
+    font-weight:600;
+}
+
+.modo-oscuro .badge-seccion{
+    background-color:#5f3d5d;
+    color:#ffd7ef;
+}
+
+.badge-libros{
+    background:#fff3e8;
+    color:#A97C73;
+}
+
+.badge-musica{
+    background:#fdeeff;
+    color:#8c0963;
+}
+
+.badge-objetos{
+    background:#eef8e8;
+    color:#6a9f52;
+}
+
+.modo-oscuro .badge-libros,
+.modo-oscuro .badge-musica,
+.modo-oscuro .badge-objetos{
+    background:#5f3d5d;
+    color:#ffd7ef;
+}

@@ -1,6 +1,3 @@
-/* =========================
-CARGAR CARRUSELES
-========================= */
 
 async function cargarCarruseles() {
 
@@ -22,17 +19,17 @@ async function cargarCarruseles() {
         const objetos = await resObjetos.json();
 
         renderizar(
-            musica.slice(0,10),
+            musica.slice(0, 10),
             "contenedor-musica"
         );
 
         renderizar(
-            libros.slice(0,10),
+            libros.slice(0, 10),
             "contenedor-libros"
         );
 
         renderizar(
-            objetos.slice(0,10),
+            objetos.slice(0, 10),
             "contenedor-objetos"
         );
 
@@ -40,7 +37,7 @@ async function cargarCarruseles() {
 
     }
 
-    catch(error){
+    catch (error) {
 
         console.error(error);
 
@@ -48,31 +45,26 @@ async function cargarCarruseles() {
 
 }
 
-
-/* =========================
-RENDERIZAR TARJETAS
-========================= */
-
-function renderizar(lista,idContenedor){
+function renderizar(lista, idContenedor) {
 
     const contenedor =
         document.getElementById(
             idContenedor
         );
 
-    if(!contenedor)return;
+    if (!contenedor) return;
 
-    let html=
+    let html =
         `<div class="marquee-track-custom">`;
 
-    lista.forEach(item=>{
+    lista.forEach(item => {
 
         const creador =
             item.autor ||
             item.marca ||
             "Varios";
 
-        html+=`
+        html += `
 
         <div
             class="card-item shadow-sm"
@@ -93,10 +85,9 @@ function renderizar(lista,idContenedor){
 
                     <p>
 
-                        ${
-                            item.descripcion ||
-                            "Sin descripción"
-                        }
+                        ${item.descripcion ||
+            "Sin descripción"
+            }
 
                     </p>
 
@@ -143,114 +134,99 @@ function renderizar(lista,idContenedor){
 
     });
 
-    html+=`</div>`;
+    html += `</div>`;
 
     contenedor.innerHTML =
         html;
 
 }
 
+function activarEfectoMarquee() {
 
-/* =========================
-MARQUESINA
-========================= */
+    document
+        .querySelectorAll(
+            ".carousel-netflix"
+        )
 
-function activarEfectoMarquee(){
+        .forEach(carrusel => {
 
-document
-.querySelectorAll(
-".carousel-netflix"
-)
+            const track =
+                carrusel.querySelector(
+                    ".marquee-track-custom"
+                );
 
-.forEach(carrusel=>{
+            if (!track) return;
 
-const track=
-carrusel.querySelector(
-".marquee-track-custom"
-);
+            track.innerHTML +=
+                track.innerHTML;
 
-if(!track)return;
+            let pos = 0;
 
-track.innerHTML+=
-track.innerHTML;
+            function mover() {
 
-let pos=0;
+                pos -= 0.8;
 
-function mover(){
+                if (
+                    Math.abs(pos)
+                    >=
+                    track.scrollWidth / 2
+                ) {
 
-pos-=0.8;
+                    pos = 0;
 
-if(
-Math.abs(pos)
->=
-track.scrollWidth/2
-){
+                }
 
-pos=0;
+                track.style.transform =
+                    `translateX(${pos}px)`;
 
-}
+                requestAnimationFrame(
+                    mover
+                );
 
-track.style.transform=
-`translateX(${pos}px)`;
+            }
 
-requestAnimationFrame(
-mover
-);
+            mover();
 
-}
-
-mover();
-
-});
+        });
 
 }
 
+function mostrarDetalles(item) {
 
-/* =========================
-MOSTRAR DETALLES
-========================= */
+    if (!item) return;
 
-function mostrarDetalles(item){
+    const creador =
+        item.autor ||
+        item.marca ||
+        "Varios";
 
-if(!item)return;
+    alert(
 
-const creador=
-item.autor||
-item.marca||
-"Varios";
-
-alert(
-
-`📦 PRODUCTO
+        `📦 PRODUCTO
 
 ${item.titulo}
 
 Por:
 ${creador}
 
-${item.descripcion||
+${item.descripcion ||
 
-"Sin descripción"}
+        "Sin descripción"}
 
 Precio:
 $${item.precio}
 
 `
 
-);
+    );
 
 }
 
-
-/* =========================
-BUSCADOR GLOBAL
-========================= */
-
 let productosGlobales = [];
 
-async function cargarBuscadorGlobal(){
+async function cargarBuscadorGlobal() {
 
-    try{
+    try {
 
         const [
             m,
@@ -296,7 +272,7 @@ async function cargarBuscadorGlobal(){
 
     }
 
-    catch(error){
+    catch (error) {
 
         console.error(error);
 
@@ -304,91 +280,91 @@ async function cargarBuscadorGlobal(){
 
 }
 
-function iniciarBusqueda(){
+function iniciarBusqueda() {
 
-const input=
-document.getElementById(
-"buscador-global"
-);
+    const input =
+        document.getElementById(
+            "buscador-global"
+        );
 
-const resultados=
-document.getElementById(
-"resultados-busqueda"
-);
+    const resultados =
+        document.getElementById(
+            "resultados-busqueda"
+        );
 
-if(
-!input||
-!resultados
-)return;
-
-
-input.addEventListener(
-"input",
-()=>{
-
-const texto=
-input.value
-.trim()
-.toLowerCase();
-
-if(!texto){
-
-resultados.innerHTML="";
-
-resultados.style.display=
-"none";
-
-return;
-
-}
-
-const encontrados=
-
-productosGlobales
-
-.filter(p=>
-
-(p.titulo||"")
-.toLowerCase()
-.includes(texto)
-
-||
-
-(p.autor||"")
-.toLowerCase()
-.includes(texto)
-
-||
-
-(p.marca||"")
-.toLowerCase()
-.includes(texto)
-
-||
-
-(p.categoria||"")
-.toLowerCase()
-.includes(texto)
-
-)
-
-.slice(0,10);
+    if (
+        !input ||
+        !resultados
+    ) return;
 
 
-resultados.innerHTML="";
+    input.addEventListener(
+        "input",
+        () => {
+
+            const texto =
+                input.value
+                    .trim()
+                    .toLowerCase();
+
+            if (!texto) {
+
+                resultados.innerHTML = "";
+
+                resultados.style.display =
+                    "none";
+
+                return;
+
+            }
+
+            const encontrados =
+
+                productosGlobales
+
+                    .filter(p =>
+
+                        (p.titulo || "")
+                            .toLowerCase()
+                            .includes(texto)
+
+                        ||
+
+                        (p.autor || "")
+                            .toLowerCase()
+                            .includes(texto)
+
+                        ||
+
+                        (p.marca || "")
+                            .toLowerCase()
+                            .includes(texto)
+
+                        ||
+
+                        (p.categoria || "")
+                            .toLowerCase()
+                            .includes(texto)
+
+                    )
+
+                    .slice(0, 10);
 
 
-encontrados.forEach(item=>{
+            resultados.innerHTML = "";
 
-const div=
-document.createElement(
-"div"
-);
 
-div.className=
-"resultado-item";
+            encontrados.forEach(item => {
 
-div.innerHTML=`
+                const div =
+                    document.createElement(
+                        "div"
+                    );
+
+                div.className =
+                    "resultado-item";
+
+                div.innerHTML = `
 
 <img
 src="${item.imagen}"
@@ -423,90 +399,85 @@ $${item.precio}
 
 `;
 
-div.onclick=()=>{
-     localStorage.setItem(
-        "busquedaGlobal",
-        item.titulo
+                div.onclick = () => {
+                    localStorage.setItem(
+                        "busquedaGlobal",
+                        item.titulo
+                    );
+
+                    if (item.tipo === "Libro") {
+
+                        window.location.href =
+                            "libros.html";
+
+                    }
+
+                    else if (item.tipo === "Música") {
+
+                        window.location.href =
+                            "musica.html";
+
+                    }
+
+                    else if (item.tipo === "Objeto") {
+
+                        window.location.href =
+                            "objetos.html";
+
+                    }
+                };
+
+                resultados.appendChild(
+                    div
+                );
+
+            });
+
+            resultados.style.display =
+
+                encontrados.length
+
+                    ?
+
+                    "block"
+
+                    :
+
+                    "none";
+
+        }
+
     );
 
-    if(item.tipo === "Libro"){
+    document
+        .addEventListener(
+            "click",
+            e => {
 
-        window.location.href =
-            "libros.html";
+                if (
+                    !e.target.closest(
+                        ".search-group"
+                    )
+                ) {
 
-    }
+                    resultados.style.display =
+                        "none";
 
-    else if(item.tipo === "Música"){
+                }
 
-        window.location.href =
-            "musica.html";
+            }
 
-    }
-
-    else if(item.tipo === "Objeto"){
-
-        window.location.href =
-            "objetos.html";
-
-    }
-};
-
-resultados.appendChild(
-div
-);
-
-});
-
-resultados.style.display=
-
-encontrados.length
-
-?
-
-"block"
-
-:
-
-"none";
+        );
 
 }
-
-);
-
-document
-.addEventListener(
-"click",
-e=>{
-
-if(
-!e.target.closest(
-".search-group"
-)
-){
-
-resultados.style.display=
-"none";
-
-}
-
-}
-
-);
-
-}
-
-
-/* =========================
-INICIAR
-========================= */
 
 document.addEventListener(
-"DOMContentLoaded",
-()=>{
+    "DOMContentLoaded",
+    () => {
 
-cargarCarruseles();
+        cargarCarruseles();
 
-cargarBuscadorGlobal();
+        cargarBuscadorGlobal();
 
-}
+    }
 );

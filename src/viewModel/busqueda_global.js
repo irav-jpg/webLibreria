@@ -1,4 +1,4 @@
- productosGlobales = [];
+productosGlobales = [];
 
 async function cargarProductos() {
 
@@ -62,20 +62,20 @@ function mostrarResultados(texto) {
 
     const resultados =
         productosGlobales
-        .filter(p =>
+            .filter(p =>
 
-            p.titulo
-            ?.toLowerCase()
-            .includes(
-                texto.toLowerCase()
+                p.titulo
+                    ?.toLowerCase()
+                    .includes(
+                        texto.toLowerCase()
+                    )
+
             )
-
-        )
-        .slice(0, 8);
+            .slice(0, 8);
 
     panel.innerHTML =
         resultados
-        .map(p => `
+            .map(p => `
 
 
     <div
@@ -97,48 +97,48 @@ function mostrarResultados(texto) {
 
 `)
 
-.join("");
+            .join("");
 
     panel.style.display =
         resultados.length
-        ? "block"
-        : "none";
+            ? "block"
+            : "none";
 }
 
 document.addEventListener(
-"DOMContentLoaded",
+    "DOMContentLoaded",
 
-async () => {
+    async () => {
 
-await cargarProductos();
+        await cargarProductos();
 
-const buscador =
-document.getElementById(
-"buscador-global"
-);
+        const buscador =
+            document.getElementById(
+                "buscador-global"
+            );
 
-if (!buscador) return;
+        if (!buscador) return;
 
-buscador.addEventListener(
-"keyup",
+        buscador.addEventListener(
+            "keyup",
 
-(e)=>{
+            (e) => {
 
-mostrarResultados(
-e.target.value
-);
+                mostrarResultados(
+                    e.target.value
+                );
 
-});
+            });
 
-});
+    });
 
-function irAProducto(categoria, titulo){
-localStorage.setItem(
+function irAProducto(categoria, titulo) {
+    localStorage.setItem(
         "busquedaGlobal",
         titulo
     );
 
-    switch(categoria){
+    switch (categoria) {
 
         case "Libros":
             window.location.href = "libros.html";
